@@ -32,7 +32,7 @@
               </div>
               <div class="col-md-6 col-lg-7 d-flex align-items-center">
                 <div class="card-body p-4 p-lg-5 text-black">
-                  <form method="POST">
+                  <form method="POST" action="../php/login/loginAccess.php">
                     <div class="d-flex align-items-center mb-3 pb-1">
                       <span class="h1 fw-bold mb-0">Login</span>
                     </div>
@@ -43,27 +43,48 @@
 
                     <div data-mdb-input-init class="form-outline mb-4">
                       <label class="form-label" for="form2Example17">Usuario</label>
-                      <input type="text" id="user" name="user" class="form-control form-control-lg" maxlength="12" minlength="8" required/>
+                      <input type="text" id="user" name="user" class="form-control form-control-lg" maxlength="12"
+                        required />
                       <span id="wrongUser" style="display: none">Usuario incorrecto</span>
                     </div>
 
                     <div data-mdb-input-init class="form-outline mb-4">
                       <label class="form-label" for="form2Example27">Contraseña</label>
-                      <input type="password" id="pass" name="pass" class="form-control form-control-lg" maxlength="12" minlength="8" required/>
+                      <input type="password" id="pass" name="pass" class="form-control form-control-lg" maxlength="12"
+                        required />
                       <span id="wrongPass" style="display: none">Contraseña incorrecta</span>
                     </div>
-                    
+
                     <div class="pt-1 mb-4">
                       <button data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-lg btn-block"
                         type="submit">
                         Login
                       </button>
 
-                      
+
                     </div>
                     <?php
-                      include "../php/loginError.php";
-                      ?>
+                    
+                    $_SESSION["login"] = 0;
+                    session_start();
+                    if ($_SESSION["login"] == 1) {
+                      echo '
+                          <div style="background-color: rgb(230, 230, 230);">
+                              <span style="color: red;">
+                                  <h5>Estructura incorrecta de ususario:  deben tener entre 8 y 12 caracteres alfanuméricos.</h5>
+                              </span>
+                          </div>
+                      ';
+                    }else if ($_SESSION["login"] == 2) {
+                      echo '
+                          <div style="background-color: rgb(230, 230, 230);">
+                              <span style="color: red;">
+                                  <h5>Estructura incorrecta de contraseña: deben tener entre 8 y 12 caracteres alfanuméricos.</h5>
+                              </span>
+                          </div>
+                      ';
+                    }
+                    ?>
                   </form>
                 </div>
               </div>
