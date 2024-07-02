@@ -1,11 +1,12 @@
 .navbarfrm{
-    margin-bottom: 80px;
+    margin-bottom: 250px;
 }
+
 .regis{
     justify-items: center;
-    margin-left: 350px;
-    width: 750px;
-    margin-bottom: 60px;
+    margin-left: 600px;
+    width: 800px;
+    margin-bottom: 150px;
 }
 .regis button{
     margin-left: 230px;
