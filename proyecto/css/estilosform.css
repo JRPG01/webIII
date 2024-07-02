@@ -1,7 +1,6 @@
 .navbarfrm{
-    margin-bottom: 250px;
+    margin-bottom: 100px;
 }
-
 .regis{
     justify-items: center;
     margin-left: 600px;
@@ -11,4 +10,13 @@
 .regis button{
     margin-left: 230px;
     width: 300px;
+}
+.Titulo{
+    margin-left: 270px;
+}
+.footerPaciente{
+    margin-top: 350px;
+}
+.footerCitas{
+    margin-top: 445px;
 }

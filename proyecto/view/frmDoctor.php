@@ -64,10 +64,27 @@
     <div class="regis">
         <form>
             <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="Titulo">
+                  <h2>Registro Doctores</h2>
+            </div>
             <div class="row mb-4">
               <div class="col">
                 <div class="form-outline">
-                    <label class="form-label" for="form6Example1">Nombre</label>
+                    <label class="form-label" for="txtNombre">Usuario</label>
+                    <input type="text" id="txtUsuario" class="form-control">
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-outline">
+                    <label class="form-label" for="form6Example2">Contraseña</label>
+                    <input type="text" id="txtContraseña" class="form-control" />
+                </div>
+              </div>
+            </div>
+            <div class="row mb-4">
+              <div class="col">
+                <div class="form-outline">
+                    <label class="form-label" for="txtNombre">Nombre</label>
                     <input type="text" id="txtNombre" class="form-control">
                 </div>
               </div>
@@ -95,6 +112,10 @@
                   </div>
                 </div>
               </div>
+              <div data-mdb-input-init class="form-outline mb-4">
+                <label class="form-label" for="form6Example5">Especialidad</label>
+                <input type="email" id="txtEspecialidad" class="form-control" />
+            </div>
             <!-- Text input -->
             <div data-mdb-input-init class="form-outline mb-4">
                 <label class="form-label" for="form6Example2">Turno</label>

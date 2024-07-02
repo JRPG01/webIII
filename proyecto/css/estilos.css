@@ -39,6 +39,13 @@
     justify-content: center;
     align-items: center;
 }
+.card-front-dos{
+    background-image: url('../img/doctores.webp');
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .card-front::after {
     content: "";
     position: absolute;
