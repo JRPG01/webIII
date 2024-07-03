@@ -7,13 +7,13 @@
 </head>
 <body>
     <?php
-    require_once '../connection/connection.php';
-    require_once '../modelos/ClienteDao.php';
-    require_once '../modelos/DoctorDao.php';
-    require_once '../modelos/ConsultaDao.php';
-    require_once '../modelos/Cliente.php';
-    require_once '../modelos/Doctor.php';
-    require_once '../modelos/Consulta.php';
+    require_once 'connection/connection.php';
+    require_once 'php/ClienteDao.php';
+    require_once 'php/DoctorDao.php';
+    require_once 'php/ConsultaDao.php';
+    require_once 'php/modelos/Cliente.php';
+    require_once 'php/modelos/Doctor.php';
+    require_once 'php/modelos/Consulta.php';
 
     $pdo = conexion();
 
@@ -33,7 +33,7 @@
     $doctorDAO = new DoctorDAO($pdo);
     $userD = 'doctor@example.com';
     $passD = 'password';
-    $doctor = $doctorDAO->loginCliente($userD, $passD);
+    $doctor = $doctorDAO->loginDoctor($userD, $passD);
     if ($doctor) {
         echo "Doctor logueado exitosamente:\n";
         print_r($doctor);
@@ -47,7 +47,7 @@
     echo "Cliente creado exitosamente.\n";
 
     // Leer un Cliente
-    $clienteLeido = $clienteDAO->buscarUno(1);
+    $clienteLeido = $clienteDAO->buscarUnoCliente(1);
     if ($clienteLeido) {
         echo "Cliente leído exitosamente:\n";
         print_r($clienteLeido);
@@ -57,11 +57,11 @@
 
     // Actualizar un Cliente
     $clienteLeido->nombreC = 'Nombre Actualizado';
-    $clienteDAO->actualizar($clienteLeido);
+    $clienteDAO->actulizarCliente($clienteLeido);
     echo "Cliente actualizado exitosamente.\n";
 
     // Eliminar un Cliente
-    $clienteDAO->eliminar(1);
+    $clienteDAO->eliminarCliente(1);
     echo "Cliente eliminado exitosamente.\n";
 
     // Crear un nuevo Doctor
@@ -70,7 +70,7 @@
     echo "Doctor creado exitosamente.\n";
 
     // Leer un Doctor
-    $doctorLeido = $doctorDAO->buscarUno(1);
+    $doctorLeido = $doctorDAO->buscarUnoDoctor(1);
     if ($doctorLeido) {
         echo "Doctor leído exitosamente:\n";
         print_r($doctorLeido);
@@ -80,11 +80,11 @@
 
     // Actualizar un Doctor
     $doctorLeido->nombreD = 'Nombre Doctor Actualizado';
-    $doctorDAO->actualizar($doctorLeido);
+    $doctorDAO->actualizarDoctor($doctorLeido);
     echo "Doctor actualizado exitosamente.\n";
 
     // Eliminar un Doctor
-    $doctorDAO->eliminar(1);
+    $doctorDAO->eliminarDoctor(1);
     echo "Doctor eliminado exitosamente.\n";
 
     // Crear una nueva Consulta
@@ -94,7 +94,7 @@
     echo "Consulta creada exitosamente.\n";
 
     // Leer una Consulta
-    $consultaLeida = $consultaDAO->buscarUno(1);
+    $consultaLeida = $consultaDAO->buscarUnoConculsta(1);
     if ($consultaLeida) {
         echo "Consulta leída exitosamente:\n";
         print_r($consultaLeida);
@@ -104,11 +104,11 @@
 
     // Actualizar una Consulta
     $consultaLeida->observaciones = 'Observaciones actualizadas';
-    $consultaDAO->actualizar($consultaLeida);
+    $consultaDAO->actualizarConculsta($consultaLeida);
     echo "Consulta actualizada exitosamente.\n";
 
     // Eliminar una Consulta
-    $consultaDAO->eliminar(1);
+    $consultaDAO->eliminarConculsta(1);
     echo "Consulta eliminada exitosamente.\n";
     ?>
 

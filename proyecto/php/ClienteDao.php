@@ -14,7 +14,7 @@ class ClienteDAO {
         $consulta->execute([$cliente->userC, $cliente->passC, $cliente->nombreC, $cliente->apellidosC, $cliente->sexoC, $cliente->edadC, $cliente->telefono]);
     }
 
-    public function buscarUno($idCliente) {
+    public function buscarUnoCliente($idCliente) {
         $query = "SELECT * FROM clientes WHERE idCliente = ?";
         $consulta = $this->pdo->prepare($query);
         $consulta->execute([$idCliente]);
@@ -25,13 +25,13 @@ class ClienteDAO {
         return null;
     }
 
-    public function actulizar(Cliente $cliente) {
+    public function actulizarCliente(Cliente $cliente) {
         $query = "UPDATE clientes SET userC = ?, passC = ?, nombreC = ?, apellidosC = ?, sexoC = ?, edadC = ?, telefono = ? WHERE idCliente = ?";
         $consulta = $this->pdo->prepare($query);
         $consulta->execute([$cliente->userC, $cliente->passC, $cliente->nombreC, $cliente->apellidosC, $cliente->sexoC, $cliente->edadC, $cliente->telefono, $cliente->idCliente]);
     }
 
-    public function eliminar($idCliente) {
+    public function eliminarCliente($idCliente) {
         $query = "DELETE FROM clientes WHERE idCliente = ?";
         $consulta = $this->pdo->prepare($query);
         $consulta->execute([$idCliente]);

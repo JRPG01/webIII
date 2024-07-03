@@ -32,6 +32,9 @@ try {
         que esa contraseña es incorrecta en la ventana de login y te manda a ella*/
         $_SESSION["login"] = 2;
         header("Location: ../../view/login.php");
+    }else{
+        $_SESSION["login"] = 3;
+        header("Location: ../../view/login.php");
     }
 } 
 //Si llega a fallar la conexion a la base de datos

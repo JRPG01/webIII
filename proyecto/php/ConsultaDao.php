@@ -13,7 +13,7 @@ class ConsultaDAO {
         $consulta->execute([$consulta->fechaCita, $consulta->idCliente, $consulta->idDoctor, $consulta->observaciones, $consulta->medicamentos]);
     }
 
-    public function buscarUno($idConsulta) {
+    public function buscarUnoConculsta($idConsulta) {
         $query = "SELECT * FROM consultas WHERE idConsulta = ?";
         $consulta = $this->pdo->prepare($query);
         $consulta->execute([$idConsulta]);
@@ -24,13 +24,13 @@ class ConsultaDAO {
         return null;
     }
 
-    public function actualizar(Consulta $consulta) {
+    public function actualizarConculsta(Consulta $consulta) {
         $query = "UPDATE consultas SET fechaCita = ?, idCliente = ?, idDoctor = ?, observaciones = ?, medicamentos = ? WHERE idConsulta = ?";
         $consulta = $this->pdo->prepare($query);
         $consulta->execute([$consulta->fechaCita, $consulta->idCliente, $consulta->idDoctor, $consulta->observaciones, $consulta->medicamentos, $consulta->idConsulta]);
     }
 
-    public function eliminar($idConsulta) {
+    public function eliminarConculsta($idConsulta) {
         $query = "DELETE FROM consultas WHERE idConsulta = ?";
         $consulta = $this->pdo->prepare($query);
         $consulta->execute([$idConsulta]);

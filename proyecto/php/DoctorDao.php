@@ -13,7 +13,7 @@ class DoctorDAO {
         $consulta->execute([$doctor->userD, $doctor->passD, $doctor->nombreD, $doctor->apellidosD, $doctor->sexoD, $doctor->edadD, $doctor->especialidad, $doctor->turno, $doctor->telefono, $doctor->correo]);
     }
 
-    public function buscarUno($idDoctor) {
+    public function buscarUnoDoctor($idDoctor) {
         $query = "SELECT * FROM doctor WHERE idDoctor = ?";
         $consulta = $this->pdo->prepare($query);
         $consulta->execute([$idDoctor]);
@@ -24,13 +24,13 @@ class DoctorDAO {
         return null;
     }
 
-    public function aactualizar(Doctor $doctor) {
+    public function actualizarDoctor(Doctor $doctor) {
         $query = "UPDATE doctor SET userD = ?, passD = ?, nombreD = ?, apellidosD = ?, sexoD = ?, edadD = ?, especialidad = ?, turno = ?, telefono = ?, correo = ? WHERE idDoctor = ?";
         $consulta = $this->pdo->prepare($query);
         $consulta->execute([$doctor->userD, $doctor->passD, $doctor->nombreD, $doctor->apellidosD, $doctor->sexoD, $doctor->edadD, $doctor->especialidad, $doctor->turno, $doctor->telefono, $doctor->correo, $doctor->idDoctor]);
     }
 
-    public function eliminar($idDoctor) {
+    public function eliminarDoctor($idDoctor) {
         $query = "DELETE FROM doctor WHERE idDoctor = ?";
         $consulta = $this->pdo->prepare($query);
         $consulta->execute([$idDoctor]);

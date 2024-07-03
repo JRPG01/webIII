@@ -65,9 +65,10 @@
                     </div>
                     <?php
                     
-                    $_SESSION["login"] = 0;
+                    
                     session_start();
-                    if ($_SESSION["login"] == 1) {
+                    $error = isset($_SESSION["login"]) ? $_SESSION["login"] : 0;
+                    if ($error == 1) {
                       echo '
                           <div style="background-color: rgb(230, 230, 230);">
                               <span style="color: red;">
@@ -75,11 +76,19 @@
                               </span>
                           </div>
                       ';
-                    }else if ($_SESSION["login"] == 2) {
+                    }else if ($error == 2) {
                       echo '
                           <div style="background-color: rgb(230, 230, 230);">
                               <span style="color: red;">
                                   <h5>Estructura incorrecta de contraseña: deben tener entre 8 y 12 caracteres alfanuméricos.</h5>
+                              </span>
+                          </div>
+                      ';
+                    }else{
+                      echo '
+                          <div style="background-color: rgb(230, 230, 230);">
+                              <span style="color: red;">
+                                  <h5>Usuario y/o contraseña invalidos.</h5>
                               </span>
                           </div>
                       ';
