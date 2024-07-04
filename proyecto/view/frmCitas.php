@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro Doctores</title>
+    <title>Registro Citas</title>
     <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
@@ -61,34 +61,33 @@
             </div>
           </nav>
     </header>
-    <div class="regis">
-        <form>
-            <!-- 2 column grid layout with text inputs for the first and last names -->
-            <div class="Titulo">
-                  <h2>Registro Citas</h2>
+    <body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-7">
+                <h2 class="mb-4 text-center">Registro Citas</h2>
+                <form>
+                    <div class="form-group mb-4">
+                        <label for="txtFechaCita">Fecha de cita</label>
+                        <input type="date" id="txtFechaCita" class="form-control">
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="txtObservaciones">Observaciones</label>
+                        <input type="text" id="txtObservaciones" class="form-control">
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="txtMedicamento">Medicamento</label>
+                        <input type="text" id="txtMedicamento" class="form-control">
+                    </div>
+                    <div class="text-center">
+                    <button type="button" class="btn btn-primary btn-block col-md-7">Registrar</button>
+                    </div>
+                </form>
             </div>
-            <div class="row mb-4">
-                <div class="col">
-                  <div class="form-outline">
-                      <label class="form-label" for="form6Example2">Fecha de cita</label>
-                      <input type="date" id="txtedad" class="form-control" />
-                  </div>
-                </div>
-              </div>
-              <div data-mdb-input-init class="form-outline mb-4">
-                <label class="form-label" for="form6Example5">Observaciones</label>
-                <input type="email" id="txtOservaciones" class="form-control" />
-            </div>
-            <!-- Text input -->
-            <div data-mdb-input-init class="form-outline mb-4">
-                <label class="form-label" for="form6Example5">Medicamento</label>
-                <input type="email" id="txtMedicamento" class="form-control" />
-            </div>
-            <!-- Submit button -->
-            <button type="button" class="btn btn-primary btn-block mb-4">Registrar</button>
-          </form>
+        </div>
     </div>
-    <footer class="bg-body-tertiary text-center footerCitas">
+</body>
+<footer class="bg-body-tertiary text-center footerCitas">
         <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
           © 2024 Copyright:
@@ -96,5 +95,4 @@
         </div>
         <!-- Copyright -->
       </footer>
-</body>
 </html>

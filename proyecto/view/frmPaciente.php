@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro Doctores</title>
+    <title>Registro Pacientes</title>
     <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     rel="stylesheet"
@@ -64,7 +64,9 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col">
+                <div class="text-center">
                 <h2 class="mb-4">Registro Paciente</h2>
+                </div>
                 <form>
                 <div class="row mb-4">
     <div class="col">
@@ -98,29 +100,15 @@
                 </div>
   </div>
 
-  <div class="row mb-4">
-    <div data-mdb-input-init class="form-outline mb-4">
-      <label class="form-label" for="form6Example5">Especialidad</label>
-      <input type="email" id="txtEspecialidad" class="form-control" />
-    </div>
-    <div data-mdb-input-init class="form-outline mb-4">
-                <label class="form-label" for="form6Example2">Turno</label>
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Seleccione Turno</option>
-                    <option value="1">Matutino</option>
-                    <option value="2">Vespertino</option>
-                    <option value="3">Completo</option>
-                    <option value="4">Nocturno</option>
-                  </select>
-            </div>
-  </div>
   <!-- Number input -->
   <div data-mdb-input-init class="form-outline mb-4">
     <label class="form-label" for="form6Example6">Telefono</label>
     <input type="number" id="form6Example6" class="form-control" />
   </div>
   <!-- Submit button -->
-  <button data-mdb-ripple-init type="button" class="btn btn-primary btn-block mb-4">REgistrar</button>
+   <div class="text-center">
+   <button data-mdb-ripple-init type="button" class="btn btn-primary btn-block mb-4 col-md-7">Registrar</button>
+   </div>
                 </form>
             </div>
         </div>

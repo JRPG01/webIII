@@ -61,42 +61,27 @@
             </div>
           </nav>
     </header>
-    <div class="regis">
-        <form>
-            <!-- 2 column grid layout with text inputs for the first and last names -->
-            <div class="Titulo">
-                  <h2>Registro Doctores</h2>
-            </div>
-            <div class="row mb-4">
-              <div class="col">
-                <div class="form-outline">
-                    <label class="form-label" for="txtNombre">Usuario</label>
-                    <input type="text" id="txtUsuario" class="form-control">
-                </div>
-              </div>
-              <div class="col">
-                <div class="form-outline">
-                    <label class="form-label" for="form6Example2">Contraseña</label>
-                    <input type="text" id="txtContraseña" class="form-control" />
-                </div>
-              </div>
-            </div>
-            <div class="row mb-4">
-              <div class="col">
-                <div class="form-outline">
-                    <label class="form-label" for="txtNombre">Nombre</label>
-                    <input type="text" id="txtNombre" class="form-control">
-                </div>
-              </div>
-              <div class="col">
-                <div class="form-outline">
-                    <label class="form-label" for="form6Example2">Apellido</label>
-                    <input type="text" id="txtApellido" class="form-control" />
-                </div>
-              </div>
-            </div>
-            <div class="row mb-4">
-                <div class="col">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col">
+                <h2 class="mb-5 text-center">Registro Doctor</h2>
+                <form>
+                <div class="row mb-4">
+    <div class="col">
+      <div data-mdb-input-init class="form-outline">
+      <label class="form-label" for="txtNombre">Nombre</label>
+        <input type="text" id="txtNombre" class="form-control" />
+      </div>
+    </div>
+    <div class="col">
+      <div data-mdb-input-init class="form-outline">
+      <label class="form-label" for="txtApellido">Apellido</label>
+        <input type="text" id="txtApellido" class="form-control" />
+      </div>
+    </div>
+  </div>
+  <div class="row mb-4">
+  <div class="col">
                     <label class="form-label" for="form6Example2">Sexo</label>
                     <select class="form-select" aria-label="Default select example">
                         <option selected>Seleccione el sexo</option>
@@ -111,13 +96,14 @@
                       <input type="number" id="txtedad" class="form-control" />
                   </div>
                 </div>
-              </div>
-              <div data-mdb-input-init class="form-outline mb-4">
-                <label class="form-label" for="form6Example5">Especialidad</label>
-                <input type="email" id="txtEspecialidad" class="form-control" />
-            </div>
-            <!-- Text input -->
-            <div data-mdb-input-init class="form-outline mb-4">
+  </div>
+
+  <div class="row mb-4">
+    <div data-mdb-input-init class="form-outline mb-4">
+      <label class="form-label" for="form6Example5">Especialidad</label>
+      <input type="email" id="txtEspecialidad" class="form-control" />
+    </div>
+    <div data-mdb-input-init class="form-outline mb-4">
                 <label class="form-label" for="form6Example2">Turno</label>
                 <select class="form-select" aria-label="Default select example">
                     <option selected>Seleccione Turno</option>
@@ -127,21 +113,22 @@
                     <option value="4">Nocturno</option>
                   </select>
             </div>
-            <!-- Email input -->
-            <div data-mdb-input-init class="form-outline mb-4">
-                <label class="form-label" for="form6Example5">Email</label>
-                <input type="email" id="txtCorreo" class="form-control" />
+  </div>
+  <!-- Number input -->
+  <div data-mdb-input-init class="form-outline mb-4">
+    <label class="form-label" for="form6Example6">Telefono</label>
+    <input type="number" id="form6Example6" class="form-control" />
+  </div>
+  <!-- Submit button -->
+   <div class="text-center mb-5">
+   <button data-mdb-ripple-init type="button" class="btn btn-primary btn-block col-md-7">Registrar</button>
+   </div>
+                </form>
             </div>
-            <!-- Number input -->
-            <div data-mdb-input-init class="form-outline mb-4">
-                <label class="form-label" for="form6Example6">Telefono</label>
-                <input type="number" id="txtTelefono" class="form-control" />
-            </div>
-            <!-- Submit button -->
-            <button type="button" class="btn btn-primary btn-block mb-4">Registrar</button>
-          </form>
+        </div>
     </div>
-    <footer class="bg-body-tertiary text-center">
+</body>
+<footer class="bg-body-tertiary text-center">
         <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
           © 2024 Copyright:
@@ -149,5 +136,4 @@
         </div>
         <!-- Copyright -->
       </footer>
-</body>
 </html>
