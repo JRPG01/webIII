@@ -10,14 +10,16 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  
   <link rel="stylesheet" href="../css/estilos.css">
+
 </head>
 
 <body>
   <header>
-    <nav class="navbar bg-body-tertiary fixed-top">
+    <nav class="navbar fixed-top" style="background-color: #736151">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Hospital General</a>
+        <a class="navbar-brand text-white" href="#">Hospital General</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -29,16 +31,16 @@
           <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
               <li class="nav-item">
-                <a class="nav-link" href="#">Doctores</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Pasiente</a>
+                <a class="nav-link" href="#">Paciente</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">Citas</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">cerrar sesion</a>
+                <a class="nav-link" href="#">Doctores</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Cerrar Sesion</a>
               </li>
             </ul>
           </div>
@@ -54,10 +56,10 @@
       <div class="card">
         <div class="card-inner">
           <div class="card-front">
-            <h2>Titulo de la tarjeta</h2>
+            <h2>Pacientes</h2>
           </div>
           <div class="card-back">
-            <h2>Título de la tarjeta</h2>
+            <h2>Pacientes</h2>
             <p>Texto descriptivo aquí.</p>
             <button class="button">Botón</button>
           </div>
@@ -67,10 +69,10 @@
       <div class="card">
         <div class="card-inner">
           <div class="card-front">
-            <h2>Titulo de la tarjeta</h2>
+            <h2>Citas</h2>
           </div>
           <div class="card-back">
-            <h2>Título de la tarjeta</h2>
+            <h2>Citas</h2>
             <p>Texto descriptivo aquí.</p>
             <button class="button">Botón</button>
           </div>
@@ -80,10 +82,10 @@
       <div class="card">
         <div class="card-inner">
           <div class="card-front">
-            <h2>Titulo de la tarjeta</h2>
+            <h2>Doctores</h2>
           </div>
           <div class="card-back">
-            <h2>Título de la tarjeta</h2>
+            <h2>Doctores</h2>
             <p>Texto descriptivo aquí.</p>
             <button class="button">Botón</button>
           </div>
@@ -93,7 +95,7 @@
   </div>
 </body>
 
-<footer class="bg-body-tertiary text-center fixed-bottom" style="z-index: 0">
+<footer class="text-center fixed-bottom">
   <!-- Grid container -->
   <div class="container p-4 pb-0">
     <!-- Section: Social media -->
@@ -118,9 +120,9 @@
   <!-- Grid container -->
 
   <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+  <div class="text-center p-3 text-white" style="background-color: #403D38;">
     © 2024 Copyright:
-    <a class="text-body" href="">ITSUR WEB III</a>
+    <a class="text-white" href="">ITSUR WEB III</a>
   </div>
   <!-- Copyright -->
 </footer>

@@ -1,3 +1,7 @@
+body{
+    background-color: rgb(255, 0, 0);
+}
+
 .tarjetas{
     margin-top: 175px;
     margin-bottom: 200px;
@@ -33,19 +37,25 @@
 }
 
 .card-front{
+    background-image: url('../img/citas.jpg'); 
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card:nth-child(1) .card-front{
     background-image: url('../img/citas.jpg');
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
-.card-front-dos{
-    background-image: url('../img/doctores.webp');
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.card:nth-child(2) .card-front{
+    background-image: url('../img/consulta.jpeg');
 }
+
+.card:nth-child(3) .card-front{
+    background-image: url('../img/doctor.jpeg');
+}
+
 .card-front::after {
     content: "";
     position: absolute;
@@ -85,4 +95,9 @@
     color: #fff;
     border: none;
     cursor: pointer;
+}
+
+footer{
+    z-index: 0;
+    background-color: #BFA58E;
 }
