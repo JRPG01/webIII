@@ -70,13 +70,13 @@
     <div class="col">
       <div data-mdb-input-init class="form-outline">
       <label class="form-label" for="txtNombre">Nombre</label>
-        <input type="text" id="txtNombre" class="form-control" />
+        <input type="text" id="txtNombre" class="form-control" placeholder="Ejem. Josue"/>
       </div>
     </div>
     <div class="col">
       <div data-mdb-input-init class="form-outline">
       <label class="form-label" for="txtApellido">Apellido</label>
-        <input type="text" id="txtApellido" class="form-control" />
+        <input type="text" id="txtApellido" class="form-control" placeholder="Ejem. Morales"/>
       </div>
     </div>
   </div>
@@ -101,7 +101,7 @@
   <div class="row mb-4">
     <div data-mdb-input-init class="form-outline mb-4">
       <label class="form-label" for="form6Example5">Especialidad</label>
-      <input type="email" id="txtEspecialidad" class="form-control" />
+      <input type="email" id="txtEspecialidad" class="form-control" placeholder="Ejem. Internista"/>
     </div>
     <div data-mdb-input-init class="form-outline mb-4">
                 <label class="form-label" for="form6Example2">Turno</label>
@@ -117,7 +117,7 @@
   <!-- Number input -->
   <div data-mdb-input-init class="form-outline mb-4">
     <label class="form-label" for="form6Example6">Telefono</label>
-    <input type="number" id="form6Example6" class="form-control" />
+    <input type="number" id="form6Example6" class="form-control" placeholder="Ejem. 4451125432"/>
   </div>
   <!-- Submit button -->
    <div class="text-center mb-5">

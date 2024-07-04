@@ -72,13 +72,13 @@
     <div class="col">
       <div data-mdb-input-init class="form-outline">
       <label class="form-label" for="txtNombre">Nombre</label>
-        <input type="text" id="txtNombre" class="form-control" />
+        <input type="text" id="txtNombre" class="form-control" placeholder="Ejem. Josue" />
       </div>
     </div>
     <div class="col">
       <div data-mdb-input-init class="form-outline">
       <label class="form-label" for="txtApellido">Apellido</label>
-        <input type="text" id="txtApellido" class="form-control" />
+        <input type="text" id="txtApellido" class="form-control" placeholder="Ejem. Morales"/>
       </div>
     </div>
   </div>
@@ -103,7 +103,7 @@
   <!-- Number input -->
   <div data-mdb-input-init class="form-outline mb-4">
     <label class="form-label" for="form6Example6">Telefono</label>
-    <input type="number" id="form6Example6" class="form-control" />
+    <input type="number" id="form6Example6" class="form-control" placeholder="Ejem. 4551124365" />
   </div>
   <!-- Submit button -->
    <div class="text-center">

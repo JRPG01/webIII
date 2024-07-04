@@ -73,11 +73,11 @@
                     </div>
                     <div class="form-group mb-4">
                         <label for="txtObservaciones">Observaciones</label>
-                        <input type="text" id="txtObservaciones" class="form-control">
+                        <input type="text" id="txtObservaciones" class="form-control" placeholder="Ejem. Tiene congesion nasal">
                     </div>
                     <div class="form-group mb-4">
                         <label for="txtMedicamento">Medicamento</label>
-                        <input type="text" id="txtMedicamento" class="form-control">
+                        <input type="text" id="txtMedicamento" class="form-control" placeholder="Ejem. Ambrosol">
                     </div>
                     <div class="text-center">
                     <button type="button" class="btn btn-primary btn-block col-md-7">Registrar</button>
