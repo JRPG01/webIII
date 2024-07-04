@@ -61,49 +61,34 @@
             </div>
           </nav>
     </header>
-    <div class="regis">
-        <form>
-            <!-- 2 column grid layout with text inputs for the first and last names -->
-            <div class="Titulo">
-                  <h2>Registro Paciente</h2>
-            </div>
-            <div class="row mb-4">
-              <div class="col">
-                <div class="form-outline">
-                    <label class="form-label" for="txtNombre">Usuario</label>
-                    <input type="text" id="txtUsuarioPaciente" class="form-control">
-                </div>
-              </div>
-              <div class="col">
-                <div class="form-outline">
-                    <label class="form-label" for="form6Example2">Contraseña</label>
-                    <input type="text" id="txtContraseñaPaciente" class="form-control" />
-                </div>
-              </div>
-            </div>
-            <div class="row mb-4">
-              <div class="col">
-                <div class="form-outline">
-                    <label class="form-label" for="txtNombre">Nombre</label>
-                    <input type="text" id="txtNombre" class="form-control">
-                </div>
-              </div>
-              <div class="col">
-                <div class="form-outline">
-                    <label class="form-label" for="form6Example2">Apellido</label>
-                    <input type="text" id="txtApellido" class="form-control" />
-                </div>
-              </div>
-            </div>
-            <div class="row mb-4">
-                <div class="col">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col">
+                <h2 class="mb-4">Registro Paciente</h2>
+                <form>
+                <div class="row mb-4">
+    <div class="col">
+      <div data-mdb-input-init class="form-outline">
+      <label class="form-label" for="txtNombre">Nombre</label>
+        <input type="text" id="txtNombre" class="form-control" />
+      </div>
+    </div>
+    <div class="col">
+      <div data-mdb-input-init class="form-outline">
+      <label class="form-label" for="txtApellido">Apellido</label>
+        <input type="text" id="txtApellido" class="form-control" />
+      </div>
+    </div>
+  </div>
+  <div class="row mb-4">
+  <div class="col">
                     <label class="form-label" for="form6Example2">Sexo</label>
                     <select class="form-select" aria-label="Default select example">
                         <option selected>Seleccione el sexo</option>
                         <option value="1">Femenino</option>
                         <option value="2">Masculino</option>
                         <option value="3">Otro</option>
-                    </select>
+                      </select>
                 </div>
                 <div class="col">
                   <div class="form-outline">
@@ -111,18 +96,36 @@
                       <input type="number" id="txtedad" class="form-control" />
                   </div>
                 </div>
-              </div>    
-              <div data-mdb-input-init class="form-outline mb-4">
-            </div>
-            <!-- Number input -->
-            <div data-mdb-input-init class="form-outline mb-4">
-                <label class="form-label" for="form6Example6">Telefono</label>
-                <input type="number" id="txtTelefono" class="form-control" />
-            </div>
-            <!-- Submit button -->
-            <button type="button" class="btn btn-primary btn-block mb-4">Registrar</button>
-          </form>
+  </div>
+
+  <div class="row mb-4">
+    <div data-mdb-input-init class="form-outline mb-4">
+      <label class="form-label" for="form6Example5">Especialidad</label>
+      <input type="email" id="txtEspecialidad" class="form-control" />
     </div>
+    <div data-mdb-input-init class="form-outline mb-4">
+                <label class="form-label" for="form6Example2">Turno</label>
+                <select class="form-select" aria-label="Default select example">
+                    <option selected>Seleccione Turno</option>
+                    <option value="1">Matutino</option>
+                    <option value="2">Vespertino</option>
+                    <option value="3">Completo</option>
+                    <option value="4">Nocturno</option>
+                  </select>
+            </div>
+  </div>
+  <!-- Number input -->
+  <div data-mdb-input-init class="form-outline mb-4">
+    <label class="form-label" for="form6Example6">Telefono</label>
+    <input type="number" id="form6Example6" class="form-control" />
+  </div>
+  <!-- Submit button -->
+  <button data-mdb-ripple-init type="button" class="btn btn-primary btn-block mb-4">REgistrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
     <footer class="bg-body-tertiary text-center footerPaciente">
         <!-- Copyright -->
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
@@ -131,5 +134,4 @@
         </div>
         <!-- Copyright -->
       </footer>
-</body>
 </html>
