@@ -49,9 +49,7 @@
                     </div>
 
                     <div class="pt-5 mb-4 d-flex justify-content-center align-items-center">
-                      <button data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-lg btn-block" style="width: 200px;" type="submit">
-                        Login
-                      </button>
+                      <button data-mdb-button-init data-mdb-ripple-init class="btn btn-lg btn-block text-white" style="width: 200px; background-color:#403D38" type="submit"> Login </button>
                     </div>
                     <?php
 

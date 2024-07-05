@@ -17,30 +17,30 @@
 
 <body>
   <header>
-    <nav class="navbar fixed-top" style="background-color: #736151">
+    <nav class="navbar fixed-top" style="background-color: #736151; padding-left: 30px;">
       <div class="container-fluid">
         <a class="navbar-brand text-white" href="#">Hospital General</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas offcanvas-end border-0 w-auto" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Aqui se pone el nombre del usuario</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <h5 class="offcanvas-title text-white" id="offcanvasNavbarLabel">Aqui se pone el nombre del usuario</h5>
+            <button type="button" class="btn-close ms-4" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
-          <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-              <li class="nav-item">
-                <a class="nav-link" href="#">Paciente</a>
+          <div class="offcanvas-body p-0 pt-5">
+            <ul class="navbar-nav justify-content-end flex-grow-1 w-auto">
+              <li class="nav-item w-auto">
+                <a class="nav-link text-white" href="#">Paciente</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Citas</a>
+              <li class="nav-item w-auto">
+                <a class="nav-link text-white" href="#">Citas</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Doctores</a>
+              <li class="nav-item w-auto">
+                <a class="nav-link text-white" href="#">Doctores</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Cerrar Sesion</a>
+              <li class="nav-item w-auto">
+                <a class="nav-link text-white" href="#">Cerrar Sesion</a>
               </li>
             </ul>
           </div>
@@ -95,7 +95,7 @@
   </div>
 </body>
 
-<footer class="text-center fixed-bottom">
+<footer class="text-center fixed-bottom" style=" z-index: 0;">
   <!-- Grid container -->
   <div class="container p-4 pb-0">
     <!-- Section: Social media -->
