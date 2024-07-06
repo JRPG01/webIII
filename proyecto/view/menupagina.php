@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +27,9 @@
         </button>
         <div class="offcanvas offcanvas-end border-0 w-auto" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title text-white" id="offcanvasNavbarLabel">Aqui se pone el nombre del usuario</h5>
+            <h5 class="offcanvas-title text-white" id="offcanvasNavbarLabel">
+              <?php echo $_SESSION["nomUser"]; ?>
+            </h5>
             <button type="button" class="btn-close ms-4" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body p-0 pt-5">

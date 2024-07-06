@@ -17,7 +17,8 @@ try {
     //Checamos al consulta
     $check_user = $check_user->query("SELECT * FROM clientes WHERE userC='$user' and passC = '$pass'");
     if ($check_user->rowCount() == 1) {
-        //Te manda al menu de la pagina
+        //Te manda al menu de la pagina con su user
+        $_SESSION["nomUser"] = $user;
         header("Location: ../../view/menupagina.php");
     } 
     else if(!preg_match("/^[A-Za-z0-9]{8,12}$/",$user)){
