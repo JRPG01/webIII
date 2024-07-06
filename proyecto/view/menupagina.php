@@ -50,7 +50,7 @@
   </header>
 
   <!--Aqui comienza el cuerpo-->
-  <div class="d-flex justify-content-center align-items-center" style="height: 90vh;">
+  <div style="flex-grow: 1; display:flex; align-items:center; justify-content: center;">
     <div class="tarjetas">
 
       <div class="card">
@@ -60,8 +60,8 @@
           </div>
           <div class="card-back">
             <h2>Pacientes</h2>
-            <p>Texto descriptivo aquí.</p>
-            <button class="button">Botón</button>
+            <p>Manejo y administración de los pacientes</br>(Se recomienda discresión)</p>
+            <button class="button">Ver</button>
           </div>
         </div>
       </div>
@@ -73,8 +73,8 @@
           </div>
           <div class="card-back">
             <h2>Citas</h2>
-            <p>Texto descriptivo aquí.</p>
-            <button class="button">Botón</button>
+            <p>Manejo y registro de las citas</p>
+            <button class="button">Ver</button>
           </div>
         </div>
       </div>
@@ -86,8 +86,8 @@
           </div>
           <div class="card-back">
             <h2>Doctores</h2>
-            <p>Texto descriptivo aquí.</p>
-            <button class="button">Botón</button>
+            <p>Manejo y administración de los doctores</br>(Advertencia: datos delicados)</p>
+            <button class="button">Ver</button>
           </div>
         </div>
       </div>
@@ -95,11 +95,11 @@
   </div>
 </body>
 
-<footer class="text-center fixed-bottom" style=" z-index: 0;">
+<footer class="text-center" style=" z-index: 0;">
   <!-- Grid container -->
-  <div class="container p-4 pb-0">
+  <div class="container p-2 pb-0">
     <!-- Section: Social media -->
-    <section class="mb-4">
+    <section class="mb-2">
       <!-- Facebook -->
       <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #3b5998;" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
 

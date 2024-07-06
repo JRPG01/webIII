@@ -1,12 +1,25 @@
-.tarjetas {
-    margin-top: 175px;
-    margin-bottom: 200px;
+body{
     display: flex;
-    justify-content: center;
+    flex-direction: column; 
+    height: 100vh;
 }
 
+.tarjetas {
+    width:100%; 
+    height:auto; 
+    justify-content:center; 
+    align-items:center; 
+    display:flex; 
+    flex-wrap:wrap;
+    margin-top: 48px;
+    padding: 50px 0;
+}
+ p{
+    text-align: center;
+ }
+
 .card {
-    margin: 0 30px;
+    margin: 50px 30px;
     width: 500px;
     height: 400px;
     perspective: 1000px;
@@ -135,9 +148,29 @@ footer {
 .nav-link{
     margin: 5px 0;
     text-align: center;
+    border-radius: 10px;
 }
 
 .nav-link:hover{
     background-color: #BFA58E;
+}
+
+.card-back button{
+    border: 0;
+    color: white;
     border-radius: 10px;
+    background-color: #403D38;
+    transition: transform 0.3s ease;
+    width: 150px;
+}
+.card-back button:hover{
+    transform: scale(1.2);
+}
+
+.btn{
+    transition: transform 0.2s ease;
+}
+
+footer section a:hover{
+    transform: scale(1.2);
 }
