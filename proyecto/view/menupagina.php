@@ -7,12 +7,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menu</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+    integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+    crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  
+
   <link rel="stylesheet" href="../css/estilos.css">
 
 </head>
@@ -22,10 +29,12 @@
     <nav class="navbar fixed-top" style="background-color: #736151; padding-left: 30px;">
       <div class="container-fluid">
         <a class="navbar-brand text-white" href="#">Hospital General</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="offcanvas offcanvas-end border-0 w-auto" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas offcanvas-end border-0 w-auto" tabindex="-1" id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel">
           <div class="offcanvas-header">
             <h5 class="offcanvas-title text-white" id="offcanvasNavbarLabel">
               <?php echo $_SESSION["nomUser"]; ?>
@@ -35,16 +44,16 @@
           <div class="offcanvas-body p-0 pt-5">
             <ul class="navbar-nav justify-content-end flex-grow-1 w-auto">
               <li class="nav-item w-auto">
-                <a class="nav-link text-white" href="#">Paciente</a>
+                <a class="nav-link text-white" href="#" onclick="showPaciente()">Paciente</a>
               </li>
               <li class="nav-item w-auto">
-                <a class="nav-link text-white" href="#">Citas</a>
+                <a class="nav-link text-white" href="#" onclick="showCitas()">Citas</a>
               </li>
               <li class="nav-item w-auto">
-                <a class="nav-link text-white" href="#">Doctores</a>
+                <a class="nav-link text-white" href="#" onclick="showDoctores()">Doctores</a>
               </li>
               <li class="nav-item w-auto">
-                <a class="nav-link text-white" href="#">Cerrar Sesion</a>
+                <a class="nav-link text-white" href="#" onclick="showLogin()">Cerrar Sesion</a>
               </li>
             </ul>
           </div>
@@ -65,7 +74,7 @@
           <div class="card-back">
             <h2>Pacientes</h2>
             <p>Manejo y administración de los pacientes</br>(Se recomienda discresión)</p>
-            <button class="button">Ver</button>
+            <button class="button"  onclick="showPaciente()">Ver</button>
           </div>
         </div>
       </div>
@@ -78,7 +87,7 @@
           <div class="card-back">
             <h2>Citas</h2>
             <p>Manejo y registro de las citas</p>
-            <button class="button">Ver</button>
+            <button class="button"  onclick="showCitas()">Ver</button>
           </div>
         </div>
       </div>
@@ -97,6 +106,8 @@
       </div>
     </div>
   </div>
+
+  <script src="../js/JsMenuPagina.js"></script>
 </body>
 
 <footer class="text-center" style=" z-index: 0;">
@@ -105,19 +116,24 @@
     <!-- Section: Social media -->
     <section class="mb-2">
       <!-- Facebook -->
-      <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #3b5998;" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+      <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #3b5998;" href="#!"
+        role="button"><i class="fab fa-facebook-f"></i></a>
 
       <!-- Twitter -->
-      <a class="btn text-white btn-floating m-1" style="background-color: #55acee;" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+      <a class="btn text-white btn-floating m-1" style="background-color: #55acee;" href="#!" role="button"><i
+          class="fab fa-twitter"></i></a>
 
       <!-- Google -->
-      <a class="btn text-white btn-floating m-1" style="background-color: #dd4b39;" href="#!" role="button"><i class="fab fa-google"></i></a>
+      <a class="btn text-white btn-floating m-1" style="background-color: #dd4b39;" href="#!" role="button"><i
+          class="fab fa-google"></i></a>
 
       <!-- Instagram -->
-      <a class="btn text-white btn-floating m-1" style="background-color: #ac2bac;" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+      <a class="btn text-white btn-floating m-1" style="background-color: #ac2bac;" href="#!" role="button"><i
+          class="fab fa-instagram"></i></a>
 
       <!-- Linkedin -->
-      <a class="btn text-white btn-floating m-1" style="background-color: #0082ca;" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+      <a class="btn text-white btn-floating m-1" style="background-color: #0082ca;" href="#!" role="button"><i
+          class="fab fa-linkedin-in"></i></a>
     </section>
     <!-- Section: Social media -->
   </div>
