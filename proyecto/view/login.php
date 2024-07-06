@@ -51,9 +51,9 @@
                     <div class="pt-5 mb-4 d-flex justify-content-center align-items-center">
                       <button data-mdb-button-init data-mdb-ripple-init class="btn btn-lg btn-block text-white" style="width: 200px; background-color:#403D38" type="submit"> Login </button>
                     </div>
+
+
                     <?php
-
-
                     session_start();
                     $error = isset($_SESSION["login"]) ? $_SESSION["login"] : 0;
                     if ($error == 1) {
@@ -66,13 +66,13 @@
                       ';
                     } else if ($error == 2) {
                       echo '
-                          <div style="background-color: rgb(230, 230, 230);">
+                          <div style="background-color: rgb(23s0, 230, 230);">
                               <span style="color: red;">
                                   <h5>Estructura incorrecta de contraseña: deben tener entre 8 y 12 caracteres alfanuméricos.</h5>
                               </span>
                           </div>
                       ';
-                    } else {
+                    } else if ($error == 3) {
                       echo '
                           <div style="background-color: rgb(230, 230, 230);">
                               <span style="color: red;">
@@ -82,6 +82,7 @@
                       ';
                     }
                     ?>
+
                   </form>
                 </div>
               </div>

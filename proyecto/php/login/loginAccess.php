@@ -1,22 +1,21 @@
 <?php
+//Incluimos la conexion
+include "../../connection/connection.php";
+
+//Iniciamos una sesion para login y le damos un valor true en su bandera
+session_start();
+$_SESSION["login"] = 0;
+
+//Les damos sus valores del form con el metodo POST
+$user = $_POST["user"];
+$pass = $_POST["pass"];
 
 try {
-    //Incluimos la conexion
-    include "../../connection/connection.php";
-
-    //Iniciamos una sesion para login y le damos un valor true en su bandera
-    session_start();
-    $_SESSION["login"] = 0;
-
-    //Les damos sus valores del form con el metodo POST
-    $user = $_POST["user"];
-    $pass = $_POST["pass"];
-
     //Conecta a la funcion conexion
     $check_user = conexion();
 
     //Checamos al consulta
-    $check_user = $check_user->query("SELECT * FROM clientes WHERE user='$user' and pass = '$pass'");
+    $check_user = $check_user->query("SELECT * FROM clientes WHERE userC='$user' and passC = '$pass'");
     if ($check_user->rowCount() == 1) {
         //Te manda al menu de la pagina
         header("Location: ../../view/menupagina.php");
@@ -39,8 +38,8 @@ try {
 } 
 //Si llega a fallar la conexion a la base de datos
 catch (Exception $e) {
+     
     echo "Fallo de conexion con el servidor";
-    sleep(5);
     header("Location: ../../view/login.php");
 }
 
