@@ -44,7 +44,7 @@
 
                     <div data-mdb-input-init class="form-outline mb-4">
                       <label class="form-label" for="form2Example27">Contraseña</label>
-                      <input type="password" id="pass" name="pass" class="form-control form-control-lg border border-3" maxlength="12" required />
+                      <input type="password" id="pass" name="pass" class="form-control form-control-lg border border-3" maxlength="12"  required />
                       <span id="wrongPass" style="display: none">Contraseña incorrecta</span>
                     </div>
 
@@ -58,23 +58,23 @@
                     $error = isset($_SESSION["login"]) ? $_SESSION["login"] : 0;
                     if ($error == 1) {
                       echo '
-                          <div style="background-color: rgb(230, 230, 230);">
+                          <div class="errores">
                               <span style="color: red;">
-                                  <h5>Estructura incorrecta de ususario:  deben tener entre 8 y 12 caracteres alfanuméricos.</h5>
+                                  <h5>Estructura incorrecta de ususario:  deben tener de 8 a 12 caracteres alfanuméricos.</h5>
                               </span>
                           </div>
                       ';
                     } else if ($error == 2) {
                       echo '
-                          <div style="background-color: rgb(23s0, 230, 230);">
+                          <div class="errores">
                               <span style="color: red;">
-                                  <h5>Estructura incorrecta de contraseña: deben tener entre 8 y 12 caracteres alfanuméricos.</h5>
+                                  <h5>Estructura incorrecta de contraseña: deben tener de 8 a 12 caracteres alfanuméricos.</h5>
                               </span>
                           </div>
                       ';
                     } else if ($error == 3) {
                       echo '
-                          <div style="background-color: rgb(230, 230, 230);">
+                          <div class="errores">
                               <span style="color: red;">
                                   <h5>Usuario y/o contraseña invalidos.</h5>
                               </span>
