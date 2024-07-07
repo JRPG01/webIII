@@ -2,11 +2,11 @@
 
 	$host = "localhost";
 	$user = "root";
-	$pass = "F1104";
+	$pass = "";
 	$db = "hospital";
 
     function conexion(){
-		$pdo = new PDO('mysql:host=localhost;dbname=hospital', 'root', 'F1104');
+		$pdo = new PDO('mysql:host=localhost;dbname=hospital', 'root', '');
 		return $pdo;
 	}
 
