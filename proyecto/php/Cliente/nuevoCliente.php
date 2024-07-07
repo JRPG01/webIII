@@ -1,47 +1,24 @@
 <?php
-    try {
-        if( //Si no llega id es agregar
-            $_ISSET($_POST["userC"]) &&
-            $_ISSET($_POST["passC"]) &&
-            $_ISSET($_POST["nombreC"]) &&
-            $_ISSET($_POST["apellidosC"]) &&
-            $_ISSET($_POST["sexoC"]) &&
-            $_ISSET($_POST["edadC"]) &&
-            $_ISSET($_POST["telefono"])
-        ){
-            require_once "../../connection/connection.php";
-            require_once "../modelos/Cliente.php";
+    try{
+        include "../../connection/connection.php";
             
-            $cons = null;
-            $con2 = $_ISSET($_POST["userC"]);
-            $con3 = $_ISSET($_POST["passC"]);
-            $con4 = $_ISSET($_POST["nombreC"]);
-            $con5 = $_ISSET($_POST["apellidosC"]);
-            $con6 = $_ISSET($_POST["sexoC"]);
-            $con7 = $_ISSET($_POST["edadC"]);
-            $con8 = $_ISSET($_POST["telefono"]);
+        $cons2 = $_POST["userC"];
+        $cons3 = $_POST["passC"];
+        $cons4 = $_POST["nombreC"];
+        $cons5 = $_POST["apellidosC"];
+        $cons6 = $_POST["sexoC"];
+        $cons7 = $_POST["edadC"];
+        $cons8 = $_POST["telefono"];
 
-            $check_user = conexion();
+        $insert = "INSERT INTO clientes
+       VALUES (null, '$cons2', '$cons3', '$cons4', '$cons5', '$cons6', '$cons7', '$cons8')";
 
-            $query = "INSERT INTO clientes (userC, passC, nombreC, apellidosC, sexoC, edadC, telefono) 
-            VALUES ('$con2', '$con3', '$con4', '$con5', '$con6', '$con7', '$con8')";
-            $Cliente = $check_user->prepare($query);
-            $Cliente->execute();
-            $clave = $check_user->lastInsertId();
-            if ($clave) {
-                $_SESSION("NuevoCliente")= true;
-                header("Location: ../../view/tablaClientes.php"); 
-            }else{
-                $_SESSION("NuevoCliente")= false;
-                header("Location: ../../view/tablaClientes.php"); 
-            }
-        }else{
-            $_SESSION("NuevoCliente")= false;
-            header("Location: ../../view/tablaClientes.php"); 
-        }
-    } 
-    catch (Exception $e) {
-        $_SESSION("NuevoCliente")= false;
-        header("Location: ../../view/login.php"); 
+
+        $query = mysqli_query($conQuery, $insert);
+        
+        header("Location: ../../view/tablaDoctores.php");
+    }catch(Exception $e){
+        echo $e;
     }
+       
 ?>

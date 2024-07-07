@@ -1,52 +1,27 @@
 <?php
-    try {
-        if(
-            $_ISSET($_POST["userD"]) &&
-            $_ISSET($_POST["passD"]) &&
-            $_ISSET($_POST["nombreD"]) &&
-            $_ISSET($_POST["apellidoD"]) &&
-            $_ISSET($_POST["sexoD"]) &&
-            $_ISSET($_POST["edadD"]) &&
-            $_ISSET($_POST["especialidad"]) &&
-            $_ISSET($_POST["turno"]) &&
-            $_ISSET($_POST["telefono"]) &&
-            $_ISSET($_POST["correo"])
-        ){
-            require_once "../../connection/connection.php";
-            require_once "../modelos/Consulta.php";
+    try{
+        include "../../connection/connection.php";
             
-            $cons = null;
-            $cons2 = $_ISSET($_POST["userD"]);
-            $cons3 = $_ISSET($_POST["passD"]);
-            $cons4 = $_ISSET($_POST["nombreD"]);
-            $cons5 = $_ISSET($_POST["apellidoD"]);
-            $cons6 = $_ISSET($_POST["sexoD"]);
-            $cons7 = $_ISSET($_POST["edadD"]);
-            $cons8 = $_ISSET($_POST["especialidad"]);
-            $cons9 = $_ISSET($_POST["turno"]);
-            $cons10 = $_ISSET($_POST["telefono"]);
-            $cons11 = $_ISSET($_POST["correo"]);
+        $cons2 = $_POST["userD"];
+        $cons3 = $_POST["passD"];
+        $cons4 = $_POST["nombreD"];
+        $cons5 = $_POST["apellidosD"];
+        $cons6 = $_POST["sexoD"];
+        $cons7 = $_POST["edadD"];
+        $cons8 = $_POST["especialidad"];
+        $cons9 = $_POST["turno"];
+        $cons10 = $_POST["telefono"];
+        $cons11 = $_POST["correo"];
 
-            $check_user = conexion();
+        $insert = "INSERT INTO doctor
+       VALUES (null, '$cons2', '$cons3', '$cons4', '$cons5', '$cons6', '$cons7', '$cons8', '$cons9', '$cons10', '$cons11')";
 
-            $query = "UPDATE consultas SET fechaCita = ?, idCliente = ?, idDoctor = ?, observaciones = ?, medicamentos = ? 
-            WHERE idConsulta = ?";
-            $consulta = $check_user->prepare($query);
-            $consulta->execute();
-            $clave = $check_user->lastInsertId();
-            if ($clave) {
-                $_SESSION("NuevoDoctor")= true;
-            }else{
-                $_SESSION("NuevoDoctor")= false;
-            }
-            header("Location: ../../view/tablaDoctores.php");
-        }else{
-            $_SESSION('NuevoDoctor')= false;
-            header("Location: ../../view/tablaDoctores.php");
-        }
-    } 
-    catch (Exception $e) {
-        $_SESSION('NuevoDoctor')= false;
-        header("Location: ../../view/login.php"); 
+
+        $query = mysqli_query($conQuery, $insert);
+        
+        header("Location: ../../view/tablaDoctores.php");
+    }catch(Exception $e){
+        echo $e;
     }
+       
 ?>

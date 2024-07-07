@@ -30,21 +30,29 @@
       <div class="row justify-content-center">
         <div class="col-md-7">
           <h2 class="mb-4 text-center">Registro Citas</h2>
-          <form>
+          <form action="../php/Consulta/nuevaConsulta.php" method="POST">
             <div class="form-group mb-4">
               <label for="txtFechaCita">Fecha de cita</label>
-              <input type="date" id="txtFechaCita" class="form-control">
+              <input type="date" name="fechaCita" id="txtFechaCita" class="form-control">
             </div>
             <div class="form-group mb-4">
               <label for="txtObservaciones">Observaciones</label>
-              <input type="text" id="txtObservaciones" class="form-control" placeholder="Ejem. Tiene congesion nasal">
+              <input type="text" name="observaciones" id="txtObservaciones" class="form-control" placeholder="Ejem. Tiene congesion nasal">
             </div>
             <div class="form-group mb-4">
               <label for="txtMedicamento">Medicamento</label>
-              <input type="text" id="txtMedicamento" class="form-control" placeholder="Ejem. Ambrosol">
+              <input type="text" name="medicamentos" id="txtMedicamento" class="form-control" placeholder="Ejem. Ambrosol">
+            </div>
+            <div class="form-group mb-4">
+              <label for="txtMedicamento">Id Cliente</label>
+              <input type="text" name="idCliente" id="txtMedicamento" class="form-control" placeholder="Ejem. 1">
+            </div>
+            <div class="form-group mb-4">
+              <label for="txtMedicamento">Id Doctor</label>
+              <input type="text" name="idDoctor" id="txtMedicamento" class="form-control" placeholder="Ejem. 1">
             </div>
             <div class="text-center">
-              <button type="button" class="btn btn-primary btn-block col-md-7">Registrar</button>
+              <button type="submit" class="btn btn-primary btn-block col-md-7">Registrar</button>
             </div>
           </form>
         </div>

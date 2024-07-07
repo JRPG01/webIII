@@ -30,25 +30,39 @@
         <div class="text-center">
           <h2 class="mb-4">Registro Paciente</h2>
         </div>
-        <form>
+        <form action="../php/cliente/nuevoCliente.php" method="POST">
+        <div class="row mb-4">
+            <div class="col">
+              <div data-mdb-input-init class="form-outline">
+                <label class="form-label" for="txtNombre">Usuario</label>
+                <input type="text" name="userC" id="txtNombre" class="form-control" placeholder="Ejem. Josue" />
+              </div>
+            </div>
+            <div class="col">
+              <div data-mdb-input-init class="form-outline">
+                <label class="form-label" for="txtApellido">Contraseña</label>
+                <input type="text" name="passC" id="txtApellido" class="form-control" placeholder="Ejem. Morales" />
+              </div>
+            </div>
+          </div>
           <div class="row mb-4">
             <div class="col">
               <div data-mdb-input-init class="form-outline">
                 <label class="form-label" for="txtNombre">Nombre</label>
-                <input type="text" id="txtNombre" class="form-control" placeholder="Ejem. Josue" />
+                <input type="text" name="nombreC" id="txtNombre" class="form-control" placeholder="Ejem. Josue" />
               </div>
             </div>
             <div class="col">
               <div data-mdb-input-init class="form-outline">
                 <label class="form-label" for="txtApellido">Apellido</label>
-                <input type="text" id="txtApellido" class="form-control" placeholder="Ejem. Morales" />
+                <input type="text" name="apellidosC" id="txtApellido" class="form-control" placeholder="Ejem. Morales" />
               </div>
             </div>
           </div>
           <div class="row mb-4">
             <div class="col">
               <label class="form-label" for="form6Example2">Sexo</label>
-              <select class="form-select" aria-label="Default select example">
+              <select class="form-select" aria-label="Default select example" name="sexoC">
                 <option selected>Seleccione el sexo</option>
                 <option value="1">Femenino</option>
                 <option value="2">Masculino</option>
@@ -58,7 +72,7 @@
             <div class="col">
               <div class="form-outline">
                 <label class="form-label" for="form6Example2">Edad</label>
-                <input type="number" id="txtedad" class="form-control" />
+                <input type="number" name="edadC" id="txtedad" class="form-control" />
               </div>
             </div>
           </div>
@@ -66,11 +80,11 @@
           <!-- Number input -->
           <div data-mdb-input-init class="form-outline mb-4">
             <label class="form-label" for="form6Example6">Telefono</label>
-            <input type="number" id="form6Example6" class="form-control" placeholder="Ejem. 4551124365" />
+            <input type="number" name="telefono" id="form6Example6" class="form-control" placeholder="Ejem. 4551124365" />
           </div>
           <!-- Submit button -->
           <div class="text-center">
-            <button data-mdb-ripple-init type="button"
+            <button data-mdb-ripple-init type="submit"
               class="btn btn-primary btn-block mb-4 col-md-7">Registrar</button>
           </div>
         </form>
