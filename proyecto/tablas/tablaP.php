@@ -29,10 +29,19 @@ if ($query->num_rows > 0) {
     echo '<td>' . htmlspecialchars($row['edadC']) . '</td>';
     echo '<td>' . htmlspecialchars($row['telefono']) . '</td>';
     echo '<td>
-            <button class="btn btn-danger btn-sm">Eliminar</button>
-            <button class="btn btn-primary btn-sm">Actualizar</button>
-          </td>';
-    echo '</tr>';
+    <form action="frmPaciente.php" method="POST" style="display:inline;">
+        <input type="hidden" name="userC" value="' . htmlspecialchars($row['userC']) . '">
+        <input type="hidden" name="passC" value="' . htmlspecialchars($row['passC']) . '">
+        <input type="hidden" name="nombreC" value="' . htmlspecialchars($row['nombreC']) . '">
+        <input type="hidden" name="apellidosC" value="' . htmlspecialchars($row['apellidosC']) . '">
+        <input type="hidden" name="sexoC" value="' . htmlspecialchars($row['sexoC']) . '">
+        <input type="hidden" name="edadC" value="' . htmlspecialchars($row['edadC']) . '">
+        <input type="hidden" name="telefono" value="' . htmlspecialchars($row['telefono']) . '">
+        <button type="submit" class="btn btn-primary btn-sm">Actualizar</button>
+    </form>
+    <button class="btn btn-danger btn-sm">Eliminar</button>
+  </td>';
+echo '</tr>';
   }
 
   echo '</tbody></table>';

@@ -48,7 +48,7 @@
     </div>
     <button class="btn btn-success btn-sm mb-4" onclick="addCitas()">Agregar</button>
     <div class="table-responsive">
-      <?php include "../tablas/tablaP.php"; ?>
+      <?php include "../tablas/tablaC.php"; ?>
     </div>
   </div>
 

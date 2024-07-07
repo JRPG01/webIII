@@ -48,7 +48,7 @@
     </div>
     <button class="btn btn-success btn-sm mb-4" onclick="addPaciente()">Agregar</button>
     <div class="table-responsive">
-      <?php include "../tablas/tablaC.php"; ?>
+      <?php include "../tablas/tablaP.php"; ?>
     </div>
   </div>
 

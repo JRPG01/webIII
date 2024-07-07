@@ -35,10 +35,22 @@ if ($query->num_rows > 0) {
     echo '<td>' . htmlspecialchars($row['telefono']) . '</td>';
     echo '<td>' . htmlspecialchars($row['correo']) . '</td>';
     echo '<td>
-            <button class="btn btn-danger btn-sm">Eliminar</button>
-            <button class="btn btn-primary btn-sm">Actualizar</button>
-          </td>';
-    echo '</tr>';
+    <form action="frmDoctor.php" method="POST" style="display:inline;">
+        <input type="hidden" name="userD" value="' . htmlspecialchars($row['userD']) . '">
+        <input type="hidden" name="passD" value="' . htmlspecialchars($row['passD']) . '">
+        <input type="hidden" name="nombreD" value="' . htmlspecialchars($row['nombreD']) . '">
+        <input type="hidden" name="apellidosD" value="' . htmlspecialchars($row['apellidosD']) . '">
+        <input type="hidden" name="sexoD" value="' . htmlspecialchars($row['sexoD']) . '">
+        <input type="hidden" name="edadD" value="' . htmlspecialchars($row['edadD']) . '">
+        <input type="hidden" name="especialidad" value="' . htmlspecialchars($row['especialidad']) . '">
+        <input type="hidden" name="turno" value="' . htmlspecialchars($row['turno']) . '">
+        <input type="hidden" name="telefono" value="' . htmlspecialchars($row['telefono']) . '">
+        <input type="hidden" name="correo" value="' . htmlspecialchars($row['correo']) . '">
+        <button type="submit" class="btn btn-primary btn-sm">Actualizar</button>
+    </form>
+    <button class="btn btn-danger btn-sm">Eliminar</button>
+  </td>';
+echo '</tr>';
   }
 
   echo '</tbody></table>';

@@ -1,3 +1,13 @@
+<?php
+    // Recoger los datos enviados por el formulario
+    $userC = isset($_POST['userC']) ? $_POST['userC'] : '';
+    $passC = isset($_POST['passC']) ? $_POST['passC'] : '';
+    $nombreC = isset($_POST['nombreC']) ? $_POST['nombreC'] : '';
+    $apellidosC = isset($_POST['apellidosC']) ? $_POST['apellidosC'] : '';
+    $sexoC = isset($_POST['sexoC']) ? $_POST['sexoC'] : '';
+    $edadC = isset($_POST['edadC']) ? $_POST['edadC'] : '';
+    $telefono = isset($_POST['telefono']) ? $_POST['telefono'] : '';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,13 +45,13 @@
             <div class="col">
               <div data-mdb-input-init class="form-outline">
                 <label class="form-label" for="txtNombre">Usuario</label>
-                <input type="text" name="userC" id="txtNombre" class="form-control" placeholder="Ejem. Josue" />
+                <input type="text" name="userC" id="txtNombre" class="form-control" placeholder="Ejem. Josue" value="<?php echo htmlspecialchars($userC); ?>" />
               </div>
             </div>
             <div class="col">
               <div data-mdb-input-init class="form-outline">
                 <label class="form-label" for="txtApellido">Contraseña</label>
-                <input type="text" name="passC" id="txtApellido" class="form-control" placeholder="Ejem. Morales" />
+                <input type="text" name="passC" id="txtApellido" class="form-control" placeholder="Ejem. Morales" value="<?php echo htmlspecialchars($passC); ?>" />
               </div>
             </div>
           </div>
@@ -49,20 +59,20 @@
             <div class="col">
               <div data-mdb-input-init class="form-outline">
                 <label class="form-label" for="txtNombre">Nombre</label>
-                <input type="text" name="nombreC" id="txtNombre" class="form-control" placeholder="Ejem. Josue" />
+                <input type="text" name="nombreC" id="txtNombre" class="form-control" placeholder="Ejem. Josue" value="<?php echo htmlspecialchars($nombreC); ?>"/>
               </div>
             </div>
             <div class="col">
               <div data-mdb-input-init class="form-outline">
                 <label class="form-label" for="txtApellido">Apellido</label>
-                <input type="text" name="apellidosC" id="txtApellido" class="form-control" placeholder="Ejem. Morales" />
+                <input type="text" name="apellidosC" id="txtApellido" class="form-control" placeholder="Ejem. Morales" value="<?php echo htmlspecialchars($apellidosC); ?>"/>
               </div>
             </div>
           </div>
           <div class="row mb-4">
             <div class="col">
               <label class="form-label" for="form6Example2">Sexo</label>
-              <select class="form-select" aria-label="Default select example" name="sexoC">
+              <select class="form-select" aria-label="Default select example" name="sexoC" value="<?php echo htmlspecialchars($sexoC); ?>">
                 <option selected>Seleccione el sexo</option>
                 <option value="1">Femenino</option>
                 <option value="2">Masculino</option>
@@ -72,7 +82,7 @@
             <div class="col">
               <div class="form-outline">
                 <label class="form-label" for="form6Example2">Edad</label>
-                <input type="number" name="edadC" id="txtedad" class="form-control" />
+                <input type="number" name="edadC" id="txtedad" class="form-control" value="<?php echo htmlspecialchars($edadC); ?>"/>
               </div>
             </div>
           </div>
@@ -80,7 +90,7 @@
           <!-- Number input -->
           <div data-mdb-input-init class="form-outline mb-4">
             <label class="form-label" for="form6Example6">Telefono</label>
-            <input type="number" name="telefono" id="form6Example6" class="form-control" placeholder="Ejem. 4551124365" />
+            <input type="number" name="telefono" id="form6Example6" class="form-control" placeholder="Ejem. 4551124365" value="<?php echo htmlspecialchars($telefono); ?>"/>
           </div>
           <!-- Submit button -->
           <div class="text-center">

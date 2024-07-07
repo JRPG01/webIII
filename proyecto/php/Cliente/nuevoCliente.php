@@ -16,7 +16,7 @@
 
         $query = mysqli_query($conQuery, $insert);
         
-        header("Location: ../../view/tablaDoctores.php");
+        header("Location: ../../view/tablaPacientes.php");
     }catch(Exception $e){
         echo $e;
     }
