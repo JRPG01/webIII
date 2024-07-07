@@ -42,11 +42,11 @@
   <header>
     <?php include "../tools/nav.php"; ?>
   </header>
-  <div class="container mt-6 tabla">
-    <div>
-      <h2 class="text-center">Datos del Paciente</h2>
+  <div class="container mt-6 tabla" style="flex-grow: 1;">
+    <div class="d-flex flex-row justify-content-center align-item-center py-5">
+      <h2 class="text-center px-3">Datos del Paciente</h2>
+      <button class="btn p-0 d-flex justify-content-center align-item-center" style="width: 50px; background-color: #403D38; color:white;" onclick="addPaciente()"><h2 class="p-0">+</h2></button>
     </div>
-    <button class="btn btn-success btn-sm mb-4" onclick="addPaciente()">Agregar</button>
     <div class="table-responsive">
       <?php include "../tablas/tablaP.php"; ?>
     </div>
@@ -58,11 +58,12 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="../js/jsTablaPaciente.js"></script>
 </body>
-<footer class="text-center fixed-bottom" style=" z-index: 0;">
+
+<footer class="text-center" style=" z-index: 0;">
   <!-- Grid container -->
-  <div class="container p-4 pb-0">
+  <div class="container p-2 pb-0">
     <!-- Section: Social media -->
-    <section class="mb-4">
+    <section class="mb-2">
       <!-- Facebook -->
       <a data-mdb-ripple-init class="btn text-white btn-floating m-1" style="background-color: #3b5998;" href="#!"
         role="button"><i class="fab fa-facebook-f"></i></a>
