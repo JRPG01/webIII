@@ -47,37 +47,7 @@
       <h2 class="text-center">Datos de los Doctores</h2>
     </div>
     <button class="btn btn-success btn-sm mb-4" onclick="addDoctor()">Agregar</button>
-    <div class="table-responsive">
-      <table class="table table-light-blue table-bordered">
-        <thead class="thead-dark">
-          <tr>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Especialidad</th>
-            <th>Turno</th>
-            <th>Correo electrónico</th>
-            <th>Teléfono</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Ejemplo de fila -->
-          <tr>
-            <td>Juan</td>
-            <td>Pérez</td>
-            <td>Médico</td>
-            <td>Matutino</td>
-            <td>juan@example.com</td>
-            <td>555-123-4567</td>
-            <td>
-              <button class="btn btn-danger btn-sm">Eliminar</button>
-              <button class="btn btn-primary btn-sm">Actualizar</button>
-            </td>
-          </tr>
-          <!-- Agrega más filas según tus datos -->
-        </tbody>
-      </table>
-    </div>
+    <?php include "../tablas/tablaD.php" ?>
   </div>
 
   <!-- Scripts de Bootstrap y otros -->

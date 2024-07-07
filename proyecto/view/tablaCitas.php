@@ -48,33 +48,7 @@
     </div>
     <button class="btn btn-success btn-sm mb-4" onclick="addCitas()">Agregar</button>
     <div class="table-responsive">
-      <table class="table table-light-blue table-bordered">
-        <thead class="thead-dark">
-          <tr>
-            <th>Fecha</th>
-            <th>Paciente</th>
-            <th>Doctor</th>
-            <th>Observaciones</th>
-            <th>Medicamentos</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Ejemplo de fila -->
-          <tr>
-            <td>12/07/2024</td>
-            <td>Juan Perez</td>
-            <td>Saul Zavala</td>
-            <td>El paciente tiene una leve neumonia</td>
-            <td>Elixicir de hp y una posion de mp</td>
-            <td>
-              <button class="btn btn-danger btn-sm">Eliminar</button>
-              <button class="btn btn-primary btn-sm">Actualizar</button>
-            </td>
-          </tr>
-          <!-- Agrega más filas según tus datos -->
-        </tbody>
-      </table>
+      <?php include "../tablas/tablaP.php"; ?>
     </div>
   </div>
 

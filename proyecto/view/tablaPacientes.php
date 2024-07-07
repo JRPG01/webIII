@@ -48,33 +48,7 @@
     </div>
     <button class="btn btn-success btn-sm mb-4" onclick="addPaciente()">Agregar</button>
     <div class="table-responsive">
-      <table class="table table-light-blue table-bordered">
-        <thead class="thead-dark">
-          <tr>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Sexo</th>
-            <th>Edad</th>
-            <th>Teléfono</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Ejemplo de fila -->
-          <tr>
-            <td>Juan</td>
-            <td>Pérez</td>
-            <td>Masculino</td>
-            <td>27</td>
-            <td>555-123-4567</td>
-            <td>
-              <button class="btn btn-danger btn-sm">Eliminar</button>
-              <button class="btn btn-primary btn-sm">Actualizar</button>
-            </td>
-          </tr>
-          <!-- Agrega más filas según tus datos -->
-        </tbody>
-      </table>
+      <?php include "../tablas/tablaC.php"; ?>
     </div>
   </div>
 
