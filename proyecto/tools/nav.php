@@ -1,3 +1,10 @@
+<?php
+
+session_start();
+$tipo = isset($_SESSION["doctor"]) ? $_SESSION["doctor"] : false;
+
+?>
+
 <nav class="navbar fixed-top" style="background-color: #736151; padding-left: 30px;">
     <div class="container-fluid">
         <a class="navbar-brand text-white" href="#">Hospital General</a>
@@ -16,13 +23,21 @@
             <div class="offcanvas-body p-0 pt-5">
                 <ul class="navbar-nav justify-content-end flex-grow-1 w-auto">
                     <li class="nav-item w-auto">
-                        <a class="nav-link text-white" href="#" onclick="showPaciente()">Paciente</a>
+                    <?php if ($_SESSION["doctor"]): ?>
+                            <a class="nav-link text-white" href="#" onclick="showPaciente()">Paciente</a>
+                        <?php else: ?>
+                            <a class="nav-link text-white disabled" href="#" onclick="showPaciente()">Paciente</a>
+                        <?php endif; ?>
                     </li>
                     <li class="nav-item w-auto">
                         <a class="nav-link text-white" href="#" onclick="showCitas()">Citas</a>
                     </li>
                     <li class="nav-item w-auto">
-                        <a class="nav-link text-white" href="#" onclick="showDoctores()">Doctores</a>
+                        <?php if ($_SESSION["doctor"]): ?>
+                            <a class="nav-link text-white" href="#" onclick="showDoctores()">Doctores</a>
+                        <?php else: ?>
+                            <a class="nav-link text-white disabled" href="#" onclick="showDoctores()">Doctores</a>
+                        <?php endif; ?>
                     </li>
                     <li class="nav-item w-auto">
                         <a class="nav-link text-white" href="#" onclick="showLogin()">Cerrar Sesion</a>

@@ -1,5 +1,3 @@
-<?php session_start(); ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,7 +52,13 @@
           <div class="card-back">
             <h2>Citas</h2>
             <p>Manejo y registro de las citas</p>
-            <button class="button"  onclick="showCitas()">Ver</button>
+            <?php if ($_SESSION["doctor"]): ?>
+                <button class="button" onclick="showCitas()">Ver</button>
+            <?php else: ?>
+                <button class="button" disabled aria-disabled="true">Ver</button>
+                <p class="text-danger">Acceso denegado</p>
+            <?php endif; ?>
+            
           </div>
         </div>
       </div>
@@ -67,7 +71,12 @@
           <div class="card-back">
             <h2>Doctores</h2>
             <p>Manejo y administración de los doctores</br>(Advertencia: datos delicados)</p>
-            <button class="button">Ver</button>
+            <?php if ($_SESSION["doctor"]): ?>
+                <button class="button" onclick="showDoctores()">Ver</button>
+            <?php else: ?>
+                <button class="button" disabled aria-disabled="true">Ver</button>
+                <p class="text-danger">Acceso denegado</p>
+            <?php endif; ?>
           </div>
         </div>
       </div>

@@ -13,12 +13,21 @@ $pass = $_POST["pass"];
 try {
     //Conecta a la funcion conexion
     $check_user = conexion();
+    $check_userDoc = conexion();
 
-    //Checamos al consulta
+    //Checamos la consulta
     $check_user = $check_user->query("SELECT * FROM clientes WHERE userC='$user' and passC = '$pass'");
-    if ($check_user->rowCount() == 1) {
+    $check_userDoc = $check_userDoc->query("SELECT * FROM doctor WHERE userD='$user' and passD = '$pass'");
+
+    if ($check_user->rowCount() == 1 ) {
         //Te manda al menu de la pagina con su user
         $_SESSION["nomUser"] = $user;
+        $_SESSION["doctor"] = false;
+        header("Location: ../../view/menupagina.php");
+    } else if ($check_userDoc->rowCount() == 1 ) {
+        //Te manda al menu de la pagina con su user
+        $_SESSION["nomUser"] = $user;
+        $_SESSION["doctor"] = true;
         header("Location: ../../view/menupagina.php");
     } 
     else if(!preg_match("/^[A-Za-z0-9]{8,12}$/",$user)){
