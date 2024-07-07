@@ -55,7 +55,6 @@
             <?php if ($_SESSION["doctor"]): ?>
                 <button class="button" onclick="showCitas()">Ver</button>
             <?php else: ?>
-                <button class="button" disabled aria-disabled="true">Ver</button>
                 <p class="text-danger">Acceso denegado</p>
             <?php endif; ?>
             
@@ -74,7 +73,6 @@
             <?php if ($_SESSION["doctor"]): ?>
                 <button class="button" onclick="showDoctores()">Ver</button>
             <?php else: ?>
-                <button class="button" disabled aria-disabled="true">Ver</button>
                 <p class="text-danger">Acceso denegado</p>
             <?php endif; ?>
           </div>
