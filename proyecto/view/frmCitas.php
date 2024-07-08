@@ -82,15 +82,15 @@ $medicamentos = isset($_POST['medicamentos']) ? $_POST['medicamentos'] : '';
                     <div class="text-center d-flex flex-row justify-content-center align-item-center">
                         <?php
                         if (htmlspecialchars($idConsulta)) { ?>
-                            <button id="edit" type="submit" class="btn btn-block mb-4 col-md-3 me-3"
-                                style="background-color: #403D38; color:white;">Actualizar</button>;
+                            <button id="add" type="submit" class="btn btn-block mb-4 col-md-3 me-3"
+                                style="background-color: #403D38; color:white; display:Block;">Actualizar</button>
                         <?php } else { ?>
                             <button id="add" type="submit" class="btn btn-block mb-4 col-md-3 me-3"
-                                style="background-color: #403D38; color:white;">Registrar</button>;
+                                style="background-color: #403D38; color:white; " hidden>Registrar</button>
                         <?php }
                         ?>
                         <button type="button" class="btn btn-danger btn-block mb-4 col-md-3 ms-3"
-                            onclick="window.location.href='tablaCitas.php'">Cancelar</button>
+                            onclick="window.location.href='tablaCitas.php'" >Cancelar</button>
                     </div>
                     </form>
                 </div>
@@ -105,7 +105,7 @@ $medicamentos = isset($_POST['medicamentos']) ? $_POST['medicamentos'] : '';
 </body>
 <footer class="bg-body-tertiary text-center footerCitas">
     <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05); ">
         © 2024 Copyright:
         <a class="text-body" href="">ITSUR WEB III</a>
     </div>
