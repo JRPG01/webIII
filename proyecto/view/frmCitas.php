@@ -82,7 +82,7 @@ $medicamentos = isset($_POST['medicamentos']) ? $_POST['medicamentos'] : '';
                     <div class="text-center d-flex flex-row justify-content-center align-item-center">
                         <?php
                         if (htmlspecialchars($idConsulta)) { ?>
-                            <button id="edit" type="submit" class="btn btn-block mb-4 col-md-3 me-3"
+                            <button id="add" type="submit" class="btn btn-block mb-4 col-md-3 me-3"
                                 style="background-color: #403D38; color:white;">Actualizar</button>;
                         <?php } else { ?>
                             <button id="add" type="submit" class="btn btn-block mb-4 col-md-3 me-3"

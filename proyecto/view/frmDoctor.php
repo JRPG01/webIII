@@ -146,7 +146,7 @@ $correo = isset($_POST['correo']) ? $_POST['correo'] : '';
             <div class="text-center d-flex flex-row justify-content-center align-item-center">
             <?php
                         if (htmlspecialchars($idDoctor)) { ?>
-                            <button id="edit" type="submit" class="btn btn-block mb-4 col-md-3 me-3"
+                            <button id="add" type="submit" class="btn btn-block mb-4 col-md-3 me-3"
                                 style="background-color: #403D38; color:white;">Actualizar</button>;
                         <?php } else { ?>
                             <button id="add" type="submit" class="btn btn-block mb-4 col-md-3 me-3"

@@ -2,7 +2,7 @@
 
 include "../connection/connection.php";
 // Consulta SQL para obtener los datos
-$sql = "SELECT * FROM doctor";
+$sql = "SELECT * FROM doctor where '..'";
 $query = mysqli_query($conQuery, $sql);
 
 if ($query->num_rows > 0) {
