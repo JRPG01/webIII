@@ -77,7 +77,7 @@
                                 echo '<button type="submit" class="btn btn-block mb-4 col-md-3 me-3" style="background-color: #403D38; color:white;">Registrar</button>';
                             }
                         ?>
-                        <button type="button"  class="btn btn-danger btn-block mb-4 col-md-3 ms-3" onclick="window.location.href='tablaPacientes.php'">Cancelar</button>
+                        <button type="button"  class="btn btn-danger btn-block mb-4 col-md-3 ms-3" onclick="window.location.href='tablaCitas.php'">Cancelar</button>
                     </div>
                 </form>
             </div>
