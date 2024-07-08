@@ -43,11 +43,20 @@
     <?php include "../tools/nav.php"; ?>
   </header>
   <div class="container mt-6 tabla" style="flex-grow: 1;">
-    <div class="d-flex flex-row justify-content-center align-item-center py-5">
-      <h2 class="text-center px-3">Datos de los Doctores</h2>
-      <button class="btn p-0 d-flex justify-content-center align-item-center" style="width: 50px; background-color: #403D38; color:white;" onclick="addDoctor()"><h2 class="p-0">+</h2></button>
-    </div>
-    <?php include "../tablas/tablaD.php" ?>
+    <?php if ($_SESSION["doctor"]): ?>
+      <div class="d-flex flex-row justify-content-center align-item-center py-5">
+        <h2 class="text-center px-3">Datos de los Doctores</h2>
+        <button class="btn p-0 d-flex justify-content-center align-item-center"
+          style="width: 50px; background-color: #403D38; color:white;" onclick="addDoctor()">
+          <h2 class="p-0">+</h2>
+        </button>
+      </div>
+      <?php include "../tablas/tablaD.php" ?>
+
+    <?php else: ?>
+      <h1 style="text-align: center;">No tienes permitido ingresar a esta ventana, retirate o mandaremos matones. OJO
+      </h1>
+    <?php endif; ?>
   </div>
 
   <!-- Scripts de Bootstrap y otros -->

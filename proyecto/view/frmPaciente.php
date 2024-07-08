@@ -1,12 +1,12 @@
 <?php
-    // Recoger los datos enviados por el formulario
-    $userC = isset($_POST['userC']) ? $_POST['userC'] : '';
-    $passC = isset($_POST['passC']) ? $_POST['passC'] : '';
-    $nombreC = isset($_POST['nombreC']) ? $_POST['nombreC'] : '';
-    $apellidosC = isset($_POST['apellidosC']) ? $_POST['apellidosC'] : '';
-    $sexoC = isset($_POST['sexoC']) ? $_POST['sexoC'] : '';
-    $edadC = isset($_POST['edadC']) ? $_POST['edadC'] : '';
-    $telefono = isset($_POST['telefono']) ? $_POST['telefono'] : '';
+// Recoger los datos enviados por el formulario
+$userC = isset($_POST['userC']) ? $_POST['userC'] : '';
+$passC = isset($_POST['passC']) ? $_POST['passC'] : '';
+$nombreC = isset($_POST['nombreC']) ? $_POST['nombreC'] : '';
+$apellidosC = isset($_POST['apellidosC']) ? $_POST['apellidosC'] : '';
+$sexoC = isset($_POST['sexoC']) ? $_POST['sexoC'] : '';
+$edadC = isset($_POST['edadC']) ? $_POST['edadC'] : '';
+$telefono = isset($_POST['telefono']) ? $_POST['telefono'] : '';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +27,7 @@
     integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
     </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  
+
   <link rel="stylesheet" href="../css/estilos.css">
 </head>
 
@@ -42,17 +42,19 @@
           <h2 class="mb-4">Registro Paciente</h2>
         </div>
         <form action="../php/cliente/nuevoCliente.php" method="POST">
-        <div class="row mb-4">
+          <div class="row mb-4">
             <div class="col">
               <div data-mdb-input-init class="form-outline">
                 <label class="form-label" for="txtNombre">Usuario</label>
-                <input type="text" name="userC" id="txtNombre" class="form-control" placeholder="Ejem. Josue" value="<?php echo htmlspecialchars($userC); ?>" />
+                <input type="text" name="userC" id="txtNombre" class="form-control" placeholder="Ejem. Josue"
+                  value="<?php echo htmlspecialchars($userC); ?>" />
               </div>
             </div>
             <div class="col">
               <div data-mdb-input-init class="form-outline">
                 <label class="form-label" for="txtApellido">Contraseña</label>
-                <input type="text" name="passC" id="txtApellido" class="form-control" placeholder="Ejem. Morales" value="<?php echo htmlspecialchars($passC); ?>" />
+                <input type="text" name="passC" id="txtApellido" class="form-control" placeholder="Ejem. Morales"
+                  value="<?php echo htmlspecialchars($passC); ?>" />
               </div>
             </div>
           </div>
@@ -60,20 +62,23 @@
             <div class="col">
               <div data-mdb-input-init class="form-outline">
                 <label class="form-label" for="txtNombre">Nombre</label>
-                <input type="text" name="nombreC" id="txtNombre" class="form-control" placeholder="Ejem. Josue" value="<?php echo htmlspecialchars($nombreC); ?>"/>
+                <input type="text" name="nombreC" id="txtNombre" class="form-control" placeholder="Ejem. Josue"
+                  value="<?php echo htmlspecialchars($nombreC); ?>" />
               </div>
             </div>
             <div class="col">
               <div data-mdb-input-init class="form-outline">
                 <label class="form-label" for="txtApellido">Apellido</label>
-                <input type="text" name="apellidosC" id="txtApellido" class="form-control" placeholder="Ejem. Morales" value="<?php echo htmlspecialchars($apellidosC); ?>"/>
+                <input type="text" name="apellidosC" id="txtApellido" class="form-control" placeholder="Ejem. Morales"
+                  value="<?php echo htmlspecialchars($apellidosC); ?>" />
               </div>
             </div>
           </div>
           <div class="row mb-4">
             <div class="col">
               <label class="form-label" for="form6Example2">Sexo</label>
-              <select class="form-select" aria-label="Default select example" name="sexoC" value="<?php echo htmlspecialchars($sexoC); ?>">
+              <select class="form-select" aria-label="Default select example" name="sexoC"
+                value="<?php echo htmlspecialchars($sexoC); ?>">
                 <option selected>Seleccione el sexo</option>
                 <option value="1">Femenino</option>
                 <option value="2">Masculino</option>
@@ -83,7 +88,8 @@
             <div class="col">
               <div class="form-outline">
                 <label class="form-label" for="form6Example2">Edad</label>
-                <input type="number" name="edadC" id="txtedad" class="form-control" value="<?php echo htmlspecialchars($edadC); ?>"/>
+                <input type="number" name="edadC" id="txtedad" class="form-control"
+                  value="<?php echo htmlspecialchars($edadC); ?>" />
               </div>
             </div>
           </div>
@@ -91,12 +97,15 @@
           <!-- Number input -->
           <div data-mdb-input-init class="form-outline mb-4">
             <label class="form-label" for="form6Example6">Telefono</label>
-            <input type="number" name="telefono" id="form6Example6" class="form-control" placeholder="Ejem. 4551124365" value="<?php echo htmlspecialchars($telefono); ?>"/>
+            <input type="number" name="telefono" id="form6Example6" class="form-control" placeholder="Ejem. 4551124365"
+              value="<?php echo htmlspecialchars($telefono); ?>" />
           </div>
           <!-- Submit button -->
           <div class="text-center d-flex flex-row justify-content-center align-item-center">
-            <button data-mdb-ripple-init type="submit" class="btn btn-block mb-4 col-md-3 me-3" style="background-color: #403D38; color:white;">Registrar</button>
-            <button type="button" class="btn btn-danger btn-block mb-4 col-md-3 ms-3" onclick="window.location.href='tablaPacientes.php'">Cancelar</button>
+            <button data-mdb-ripple-init type="submit" class="btn btn-block mb-4 col-md-3 me-3"
+              style="background-color: #403D38; color:white;">Registrar</button>
+            <button type="button" class="btn btn-danger btn-block mb-4 col-md-3 ms-3"
+              onclick="window.location.href='tablaPacientes.php'">Cancelar</button>
           </div>
         </form>
       </div>

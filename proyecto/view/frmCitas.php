@@ -1,11 +1,11 @@
 <?php
-    // Recoger los datos enviados por el formulario
-    $idConsulta = isset($_POST['idConsulta']) ? $_POST['idConsulta'] : '';
-    $fechaCita = isset($_POST['fechaCita']) ? $_POST['fechaCita'] : '';
-    $idCliente = isset($_POST['idCliente']) ? $_POST['idCliente'] : '';
-    $idDoctor = isset($_POST['idDoctor']) ? $_POST['idDoctor'] : '';
-    $observaciones = isset($_POST['observaciones']) ? $_POST['observaciones'] : '';
-    $medicamentos = isset($_POST['medicamentos']) ? $_POST['medicamentos'] : '';
+// Recoger los datos enviados por el formulario
+$idConsulta = isset($_POST['idConsulta']) ? $_POST['idConsulta'] : '';
+$fechaCita = isset($_POST['fechaCita']) ? $_POST['fechaCita'] : '';
+$idCliente = isset($_POST['idCliente']) ? $_POST['idCliente'] : '';
+$idDoctor = isset($_POST['idDoctor']) ? $_POST['idDoctor'] : '';
+$observaciones = isset($_POST['observaciones']) ? $_POST['observaciones'] : '';
+$medicamentos = isset($_POST['medicamentos']) ? $_POST['medicamentos'] : '';
 
 ?>
 
@@ -37,38 +37,50 @@
     </header>
 
     <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-7">
-                <h2 class="mb-4 text-center">Registro Citas</h2>
-                <form action="../php/Consulta/nuevaConsulta.php" method="POST">
-                    <input type="hidden" name="idConsulta" value="<?php echo htmlspecialchars($idConsulta); ?>">
-                    
-                    <div class="form-group mb-4">
-                        <label for="txtFechaCita">Fecha de cita</label>
-                        <input type="date" name="fechaCita" id="txtFechaCita" class="form-control" value="<?php echo htmlspecialchars($fechaCita); ?>" required>
-                    </div>
-                    <div class="form-group mb-4">
-                        <label for="txtObservaciones">Observaciones</label>
-                        <input type="text" name="observaciones" id="txtObservaciones" class="form-control" placeholder="Ejem. Tiene congesion nasal" value="<?php echo htmlspecialchars($observaciones); ?>"required>
-                    </div>
-                    <div class="form-group mb-4">
-                        <label for="txtMedicamento">Medicamento</label>
-                        <input type="text" name="medicamentos" id="txtMedicamento" class="form-control" placeholder="Ejem. Ambrosol" value="<?php echo htmlspecialchars($medicamentos); ?>"required>
-                    </div>
-                    <div class="form-group mb-4">
-                        <label for="txtIdCliente">Id Cliente</label>
-                        <input type="text" name="idCliente" id="txtIdCliente" class="form-control" placeholder="Ejem. 1" value="<?php echo htmlspecialchars($idCliente); ?>"required>
-                    </div>
-                    <div class="form-group mb-4">
-                        <label for="txtIdDoctor">Id Doctor</label>
-                        <input type="text" name="idDoctor" id="txtIdDoctor" class="form-control" placeholder="Ejem. 1" value="<?php echo htmlspecialchars($idDoctor); ?>"required>
-                    </div>
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-primary btn-block col-md-7">Registrar</button>
-                    </div>
-                </form>
+        <?php if ($_SESSION["doctor"]): ?>
+            <div class="row justify-content-center">
+                <div class="col-md-7">
+                    <h2 class="mb-4 text-center">Registro Citas</h2>
+                    <form action="../php/Consulta/nuevaConsulta.php" method="POST">
+                        <input type="hidden" name="idConsulta" value="<?php echo htmlspecialchars($idConsulta); ?>">
+
+                        <div class="form-group mb-4">
+                            <label for="txtFechaCita">Fecha de cita</label>
+                            <input type="date" name="fechaCita" id="txtFechaCita" class="form-control"
+                                value="<?php echo htmlspecialchars($fechaCita); ?>" required>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="txtObservaciones">Observaciones</label>
+                            <input type="text" name="observaciones" id="txtObservaciones" class="form-control"
+                                placeholder="Ejem. Tiene congesion nasal"
+                                value="<?php echo htmlspecialchars($observaciones); ?>" required>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="txtMedicamento">Medicamento</label>
+                            <input type="text" name="medicamentos" id="txtMedicamento" class="form-control"
+                                placeholder="Ejem. Ambrosol" value="<?php echo htmlspecialchars($medicamentos); ?>"
+                                required>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="txtIdCliente">Id Cliente</label>
+                            <input type="text" name="idCliente" id="txtIdCliente" class="form-control" placeholder="Ejem. 1"
+                                value="<?php echo htmlspecialchars($idCliente); ?>" required>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label for="txtIdDoctor">Id Doctor</label>
+                            <input type="text" name="idDoctor" id="txtIdDoctor" class="form-control" placeholder="Ejem. 1"
+                                value="<?php echo htmlspecialchars($idDoctor); ?>" required>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-block col-md-7">Registrar</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
+        <?php else: ?>
+            <h1 style="text-align: center;">No tienes permitido ingresar a esta ventana, retirate o mandaremos matones. OJO
+            </h1>
+        <?php endif; ?>
     </div>
 </body>
 <footer class="bg-body-tertiary text-center footerCitas">
