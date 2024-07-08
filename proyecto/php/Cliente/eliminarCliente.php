@@ -1,25 +1,26 @@
 <?php
     try {
-        if($_ISSET($_POST["idCliente"])){
+        if(ISSET($_POST["idCliente"])){
             include "../../connection/connection.php";
 
             $user = null;
-            $user = $_ISSET($_POST["idCliente"]);
-
+            $user = $_POST["idCliente"];
             $check_user = conexion();
 
-            $check_user = $check_user->query("DELETE FROM clientes WHERE idCliente =  '$user'");
+            $check_user = $check_user->query("DELETE FROM clientes WHERE idCliente = '$user'");
             if ($check_user->execute()) {
                 $_SESSION["eliminarCliente"] = true;
             } 
-            header("Location: ../../view/tablaClientes.php");
+            header("Location: ../../view/tablaPacientes.php");
         }else{
             $_SESSION["eliminarCliente"] = false;
-            header("Location: ../../view/tablaClientes.php");
+            echo 'falta id';
+            header("Location: ../../view/tablaPacientes.php");
         }
     } 
     catch (Exception $e) {
+        echo $e;
         $_SESSION["eliminarCliente"] = false;
-        header("Location: ../../view/tablaClientes.php");
+        header("Location: ../../view/tablaPacientes.php");
     }
 ?>

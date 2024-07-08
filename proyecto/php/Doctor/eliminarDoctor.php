@@ -1,10 +1,10 @@
 <?php
     try {
-        if($_ISSET($_POST["idDoctor"])){
+        if(ISSET($_POST["idDoctor"])){
             include "../../connection/connection.php";
 
             $user = null;
-            $user = $_ISSET($_POST["idDoctor"]);
+            $user = $_POST["idDoctor"];
 
             $check_user = conexion();
 
@@ -12,14 +12,14 @@
             if ($check_user->execute()) {
                 $_SESSION["eliminarDoctor"] = true;
             } 
-            header("Location: ../../view/tablaDoctores.php");
         }else{
             $_SESSION["eliminarDoctor"] = false;
-            header("Location: ../../view/tablaDoctores.php");
+            
         }
+        header("Location: ../../view/tablaDoctores.php");
     } 
     catch (Exception $e) {
-        return null;
+        $_SESSION["eliminarDoctor"] = false;
         header("Location: ../../view/login.php");
     }
 ?>

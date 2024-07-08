@@ -1,4 +1,5 @@
 <?php
+session_start();
     try {
         if($_ISSET($_POST["idConsulta"])){
             require_once "../../connection/connection.php";
@@ -14,7 +15,7 @@
             $consulta->execute();
             $row = $consulta->fetch(PDO::FETCH_OBJ);
             if ($row) {
-                $_SESSION('consultaBuscada')= new Consulta($row->idConsulta,$row->fechaCita, $row->idCliente, $row->idDoctor, $row->observaciones, $row->medicamentos);
+                $_SESSION('consultaBuscada') =  new Consulta($row->idConsulta,$row->fechaCita, $row->idCliente, $row->idDoctor, $row->observaciones, $row->medicamentos);
                 header("Location: ../../view/tablaCitas.php");
             }else{
                 $_SESSION('consultaBuscada')= null;

@@ -18,9 +18,8 @@ try {
         // Preparar la consulta SQL utilizando una consulta preparada
         $query = "INSERT INTO consultas (fechaCita, idCliente, idDoctor, observaciones, medicamentos) VALUES (?, ?, ?, ?, ?)";
         $stmt = $conQuery->prepare($query);
-
         // Vincular parámetros y ejecutar la consulta
-        $stmt->bind_param('siiis', $fechaCita, $idCliente, $idDoctor, $observaciones, $medicamentos);
+        $stmt->bind_param('siiss', $fechaCita, $idCliente, $idDoctor, $observaciones, $medicamentos);
         $stmt->execute();
 
         // Redireccionar a la página de visualización de citas

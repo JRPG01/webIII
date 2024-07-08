@@ -39,7 +39,7 @@
 </head>
 
 <body>
-  <header>
+<header>
     <?php include "../tools/nav.php"; ?>
   </header>
   <div class="container mt-6 tabla" style="flex-grow: 1;">

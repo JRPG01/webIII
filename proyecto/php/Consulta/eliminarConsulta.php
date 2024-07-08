@@ -1,17 +1,17 @@
 <?php
     try {
-        if($_ISSET($_POST["idConsulta"])){
+        if(ISSET($_POST["idConsulta"])){
             include "../../connection/connection.php";
-
-            $cons = null;
-            $cons = $_ISSET($_POST["idConsulta"]);
+            $cons = $_POST["idConsulta"];
 
             $check_user = conexion();
 
             $check_user = $check_user->query("DELETE FROM consultas WHERE idConsulta =  '$cons'");
             if ($check_user->execute()) {
-                header("Location: ../../view/tablaCitas.php");
+                echo ISSET($_POST["idConsulta"]);
+                echo 'Eliminado';
                 $_SESSION["eliminarConsulta"] = true;
+                header("Location: ../../view/tablaCitas.php");
             } 
         }else{
             $_SESSION["eliminarConsulta"] = false;
