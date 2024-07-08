@@ -27,14 +27,15 @@
     integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous">
     </script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <link rel="stylesheet" href="../css/estilosform.css">
+  
+  <link rel="stylesheet" href="../css/estilos.css">
 </head>
 
 <body>
-  <header class="navbarfrm">
-    <?php include "../tools/navForms.php"; ?>
+  <header>
+    <?php include "../tools/nav.php"; ?>
   </header>
-  <div class="container mt-5">
+  <div class="container mt-5 py-5" style="flex-grow: 1;">
     <div class="row">
       <div class="col">
         <div class="text-center">
@@ -93,20 +94,21 @@
             <input type="number" name="telefono" id="form6Example6" class="form-control" placeholder="Ejem. 4551124365" value="<?php echo htmlspecialchars($telefono); ?>"/>
           </div>
           <!-- Submit button -->
-          <div class="text-center">
-            <button data-mdb-ripple-init type="submit"
-              class="btn btn-primary btn-block mb-4 col-md-7">Registrar</button>
+          <div class="text-center d-flex flex-row justify-content-center align-item-center">
+            <button data-mdb-ripple-init type="submit" class="btn btn-block mb-4 col-md-3 me-3" style="background-color: #403D38; color:white;">Registrar</button>
+            <button type="button" class="btn btn-danger btn-block mb-4 col-md-3 ms-3" onclick="window.location.href='tablaPacientes.php'">Cancelar</button>
           </div>
         </form>
       </div>
     </div>
   </div>
 </body>
-<footer class="bg-body-tertiary text-center footerPaciente">
+
+<footer class="text-center" style=" z-index: 0;">
   <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+  <div class="text-center p-3 text-white" style="background-color: #403D38;">
     © 2024 Copyright:
-    <a class="text-body" href="">ITSUR WEB III</a>
+    <a class="text-white" href="">ITSUR WEB III</a>
   </div>
   <!-- Copyright -->
 </footer>

@@ -32,8 +32,8 @@
 </head>
 
 <body>
-    <header class="navbarfrm">
-        <?php include "../tools/navForms.php"; ?>
+    <header>
+        <?php include "../tools/nav.php"; ?>
     </header>
 
     <div class="container mt-5">
