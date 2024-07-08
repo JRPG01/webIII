@@ -40,9 +40,14 @@
         <div class="row justify-content-center">
             <div class="col-md-7">
                 <h2 class="mb-4 text-center">Registro Citas</h2>
-                <form action="../php/Consulta/nuevaConsulta.php" method="POST">
-                    <input type="hidden" name="idConsulta" value="<?php echo htmlspecialchars($idConsulta); ?>">
-                    
+                <?php
+                if(htmlspecialchars($idConsulta)){
+                    echo '<form action="../php/Consulta/actualizarConsulta.php" method="POST">
+                <input type="hidden" name="idConsulta" value="'. htmlspecialchars($idConsulta).'">';
+                }else{
+                    echo '<form action="../php/Consulta/nuevaConsulta.php" method="POST">';
+                }
+                ?>  
                     <div class="form-group mb-4">
                         <label for="txtFechaCita">Fecha de cita</label>
                         <input type="date" name="fechaCita" id="txtFechaCita" class="form-control" value="<?php echo htmlspecialchars($fechaCita); ?>" required>
@@ -63,8 +68,15 @@
                         <label for="txtIdDoctor">Id Doctor</label>
                         <input type="text" name="idDoctor" id="txtIdDoctor" class="form-control" placeholder="Ejem. 1" value="<?php echo htmlspecialchars($idDoctor); ?>"required>
                     </div>
+                    
                     <div class="text-center">
-                        <button type="submit" class="btn btn-primary btn-block col-md-7">Registrar</button>
+                        <?php
+                            if(htmlspecialchars($idConsulta)){
+                                echo '<button type="submit" class="btn btn-primary btn-block col-md-7">Actualizar</button>';
+                            }else{
+                                echo '<button type="submit" class="btn btn-primary btn-block col-md-7">Registrar</button>';
+                            }
+                        ?>
                     </div>
                 </form>
             </div>

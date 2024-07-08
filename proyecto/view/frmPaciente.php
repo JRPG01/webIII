@@ -1,10 +1,11 @@
 <?php
     // Recoger los datos enviados por el formulario
+    $idCliente = isset($_POST['idCliente']) ? $_POST['idCliente'] : '0';
     $userC = isset($_POST['userC']) ? $_POST['userC'] : '';
     $passC = isset($_POST['passC']) ? $_POST['passC'] : '';
     $nombreC = isset($_POST['nombreC']) ? $_POST['nombreC'] : '';
     $apellidosC = isset($_POST['apellidosC']) ? $_POST['apellidosC'] : '';
-    $sexoC = isset($_POST['sexoC']) ? $_POST['sexoC'] : '';
+    $sexoC = isset($_POST['sexoC']) ? $_POST['sexoC'] : 'M';
     $edadC = isset($_POST['edadC']) ? $_POST['edadC'] : '';
     $telefono = isset($_POST['telefono']) ? $_POST['telefono'] : '';
 ?>
@@ -40,7 +41,16 @@
         <div class="text-center">
           <h2 class="mb-4">Registro Paciente</h2>
         </div>
-        <form action="../php/cliente/nuevoCliente.php" method="POST">
+        
+          <?php
+          if($idCliente!='0'){
+            echo '<form action="../php/Cliente/actualizarCliente.php" method="POST">';
+            echo '<input type="hidden" id="idCliente" name="idCliente" value="'.$idCliente.'"/>';
+          }else{
+            echo '<form action="../php/Cliente/nuevoCliente.php" method="POST">';
+          }
+            
+          ?>
         <div class="row mb-4">
             <div class="col">
               <div data-mdb-input-init class="form-outline">
@@ -72,11 +82,10 @@
           <div class="row mb-4">
             <div class="col">
               <label class="form-label" for="form6Example2">Sexo</label>
-              <select class="form-select" aria-label="Default select example" name="sexoC" value="<?php echo htmlspecialchars($sexoC); ?>">
+              <select class="form-select" aria-label="Default select example" name="sexoC" >
                 <option selected>Seleccione el sexo</option>
-                <option value="1">Femenino</option>
-                <option value="2">Masculino</option>
-                <option value="3">Otro</option>
+                <option value="1" <?php if(htmlspecialchars($sexoC)=='F'){echo 'selected';} ?>>Femenino</option>
+                <option value="2" <?php if(htmlspecialchars($sexoC)=='M'){echo 'selected';} ?>>Masculino</option>
               </select>
             </div>
             <div class="col">
@@ -94,9 +103,18 @@
           </div>
           <!-- Submit button -->
           <div class="text-center">
-            <button data-mdb-ripple-init type="submit"
+          <?php
+            if(htmlspecialchars($idCliente)){
+              echo '<button data-mdb-ripple-init type="submit"
+              class="btn btn-primary btn-block mb-4 col-md-7">Actualizar</button>
+              ';
+            }else{
+              echo '<button data-mdb-ripple-init type="submit"
               class="btn btn-primary btn-block mb-4 col-md-7">Registrar</button>
-          </div>
+              ';
+            }
+          ?>
+        </div>
         </form>
       </div>
     </div>

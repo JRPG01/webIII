@@ -10,8 +10,7 @@
         $cons7 = $_POST["edadC"];
         $cons8 = $_POST["telefono"];
 
-        $insert = "INSERT INTO clientes
-       VALUES (null, '$cons2', '$cons3', '$cons4', '$cons5', '$cons6', '$cons7', '$cons8')";
+        $insert = "INSERT INTO clientes VALUES (null, '$cons2', '$cons3', '$cons4', '$cons5', '$cons6', '$cons7', '$cons8')";
 
 
         $query = mysqli_query($conQuery, $insert);

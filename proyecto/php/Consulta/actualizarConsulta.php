@@ -21,11 +21,10 @@ try {
         $cons6 = $_POST["medicamentos"];
 
         // Conectar a la base de datos
-        $check_user = conexion();
 
         // Preparar la consulta
         $query = "UPDATE consultas SET fechaCita = ?, idCliente = ?, idDoctor = ?, observaciones = ?, medicamentos = ? WHERE idConsulta = ?";
-        $consulta = $check_user->prepare($query);
+        $consulta = $conQuery->prepare($query);
         $consulta->bind_param('siisss', $cons2, $cons3, $cons4, $cons5, $cons6, $cons1);
         $consulta->execute();
 
