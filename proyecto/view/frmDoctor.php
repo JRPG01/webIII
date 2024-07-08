@@ -117,14 +117,15 @@ $correo = isset($_POST['correo']) ? $_POST['correo'] : '';
             <input type="mail" id="form6Example6" name="correo" class="form-control" placeholder="Ejem. 4451125432" value="<?php echo htmlspecialchars($correo); ?>" />
           </div>
           <!-- Submit button -->
-          <div class="text-center mb-5">
+          <div class="text-center d-flex flex-row justify-content-center align-item-center">
             <?php
             if (htmlspecialchars($idDoctor)) {
-              echo '<button type="submit" class="btn btn-primary btn-block col-md-7">Editar</button>';
+              echo '<button type="submit" class="btn btn-block mb-4 col-md-3 me-3" style="background-color: #403D38; color:white";>Editar</button>';
             } else {
-              echo '<button type="submit" class="btn btn-primary btn-block col-md-7">Registrar</button>';
+              echo '<button type="submit" class="btn btn-block mb-4 col-md-3 me-3" style="background-color: #403D38; color:white";>Registrar</button>';
             }
             ?>
+            <button type="button" class="btn btn-danger btn-block mb-4 col-md-3 ms-3" onclick="window.location.href='tablaDoctores.php'">Cancelar</button>
           </div>
         </form>
       </div>

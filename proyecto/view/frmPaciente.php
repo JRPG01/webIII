@@ -102,18 +102,19 @@
             <input type="number" name="telefono" id="form6Example6" class="form-control" placeholder="Ejem. 4551124365" value="<?php echo htmlspecialchars($telefono); ?>"/>
           </div>
           <!-- Submit button -->
-          <div class="text-center">
+          <div class="text-center d-flex flex-row justify-content-center align-item-center">
           <?php
             if(htmlspecialchars($idCliente)){
               echo '<button data-mdb-ripple-init type="submit"
-              class="btn btn-primary btn-block mb-4 col-md-7">Actualizar</button>
+              class="btn btn-block mb-4 col-md-3 me-3" style="background-color: #403D38; color:white;">Actualizar</button>
               ';
             }else{
               echo '<button data-mdb-ripple-init type="submit"
-              class="btn btn-primary btn-block mb-4 col-md-7">Registrar</button>
+              class="btn btn-block mb-4 col-md-3 me-3" style="background-color: #403D38; color:white;">Registrar</button>
               ';
             }
           ?>
+           <button type="button"  class="btn btn-danger btn-block mb-4 col-md-3 ms-3" onclick="window.location.href='tablaPacientes.php'">Cancelar</button>
         </div>
         </form>
       </div>

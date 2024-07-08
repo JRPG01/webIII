@@ -69,14 +69,15 @@
                         <input type="text" name="idDoctor" id="txtIdDoctor" class="form-control" placeholder="Ejem. 1" value="<?php echo htmlspecialchars($idDoctor); ?>"required>
                     </div>
                     
-                    <div class="text-center">
+                    <div class="text-center d-flex flex-row justify-content-center align-item-center">
                         <?php
                             if(htmlspecialchars($idConsulta)){
-                                echo '<button type="submit" class="btn btn-primary btn-block col-md-7">Actualizar</button>';
+                                echo '<button type="submit" class="btn btn-block mb-4 col-md-3 me-3" style="background-color: #403D38; color:white;">Actualizar</button>';
                             }else{
-                                echo '<button type="submit" class="btn btn-primary btn-block col-md-7">Registrar</button>';
+                                echo '<button type="submit" class="btn btn-block mb-4 col-md-3 me-3" style="background-color: #403D38; color:white;">Registrar</button>';
                             }
                         ?>
+                        <button type="button"  class="btn btn-danger btn-block mb-4 col-md-3 ms-3" onclick="window.location.href='tablaPacientes.php'">Cancelar</button>
                     </div>
                 </form>
             </div>
