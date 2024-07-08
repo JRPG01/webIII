@@ -55,16 +55,18 @@ $correo = isset($_POST['correo']) ? $_POST['correo'] : '';
             <div class="row mb-4">
               <div class="col">
                 <div data-mdb-input-init class="form-outline">
-                  <label class="form-label" for="txtNombre">Usuario</label>
-                  <input type="text" id="txtNombre" name="userD" class="form-control" placeholder="Ejem. Josue"
+                  <label class="form-label" for="txtUsuario">Usuario</label>
+                  <input type="text" id="txtUsuario" name="userD" class="form-control" placeholder="Ejem. Josue"
                     value="<?php echo htmlspecialchars($userD); ?>" />
+                    <span id="obersavionesError" style="display: none;">Incorecto</span>
                 </div>
               </div>
               <div class="col">
                 <div data-mdb-input-init class="form-outline">
-                  <label class="form-label" for="txtApellido">Contraseña</label>
-                  <input type="text" id="txtApellido" name="passD" class="form-control" placeholder="Ejem. Morales"
+                  <label class="form-label" for="txtPass">Contraseña</label>
+                  <input type="text" id="txtPass" name="passD" class="form-control" placeholder="Ejem. Morales"
                     value="<?php echo htmlspecialchars($passD); ?>" />
+                    <span id="obersavionesError1" style="display: none;">Incorecto</span>
                 </div>
               </div>
             </div>
@@ -74,6 +76,7 @@ $correo = isset($_POST['correo']) ? $_POST['correo'] : '';
                   <label class="form-label" for="txtNombre">Nombre</label>
                   <input type="text" id="txtNombre" name="nombreD" class="form-control" placeholder="Ejem. Josue"
                     value="<?php echo htmlspecialchars($nombreD); ?>" />
+                    <span id="obersavionesError2" style="display: none;">Incorecto</span>
                 </div>
               </div>
               <div class="col">
@@ -81,25 +84,28 @@ $correo = isset($_POST['correo']) ? $_POST['correo'] : '';
                   <label class="form-label" for="txtApellido">Apellido</label>
                   <input type="text" id="txtApellido" name="apellidosD" class="form-control" placeholder="Ejem. Morales"
                     value="<?php echo htmlspecialchars($apellidosD); ?>" />
+                    <span id="obersavionesError3" style="display: none;">Incorecto</span>
                 </div>
               </div>
             </div>
             <div class="row mb-4">
               <div class="col">
                 <label class="form-label" for="form6Example2">Sexo</label>
-                <select class="form-select" name="sexoD" aria-label="Default select example "
+                <select class="form-select" name="sexoD" id= 'txtsexoD' aria-label="Default select example "
                   value="<?php echo htmlspecialchars($sexoD); ?>">
                   <option selected>Seleccione el sexo</option>
                   <option value="1" <?php if(htmlspecialchars($sexoD)=='F'){echo 'selected';} ?>>Femenino</option>
                   <option value="2" <?php if(htmlspecialchars($sexoD)=='M'){echo 'selected';} ?>>Masculino</option>
               </select>
+              <span id="obersavionesError4" style="display: none;">Incorecto</span>
               </div>
               <div class="col">
                 <div class="form-outline">
                   <label class="form-label" for="form6Example2">Edad</label>
                   <input type="number" name="edadD" id="txtedad" class="form-control"
                     value="<?php echo htmlspecialchars($edadD); ?>" />
-                </div>
+                    <span id="obersavionesError5" style="display: none;">Incorecto</span>
+                    </div>
               </div>
             </div>
 
@@ -108,10 +114,11 @@ $correo = isset($_POST['correo']) ? $_POST['correo'] : '';
                 <label class="form-label" for="form6Example5">Especialidad</label>
                 <input type="text" name="especialidad" id="txtEspecialidad" class="form-control"
                   placeholder="Ejem. Internista" value="<?php echo htmlspecialchars($especialidad); ?>" />
+                  <span id="obersavionesError6" style="display: none;">Incorecto</span>
               </div>
               <div data-mdb-input-init class="form-outline mb-4">
                 <label class="form-label" for="form6Example2">Turno</label>
-                <select class="form-select" aria-label="Default select example" name="turno"
+                <select class="form-select" id='txtTurno' aria-label="Default select example" name="turno"
                   value="<?php echo htmlspecialchars($turno); ?>">
                   <option selected>Seleccione Turno</option>
                   <option value="1" <?php if(htmlspecialchars($turno)=='Matutino'){echo 'selected';} ?>>Matutino</option>
@@ -119,6 +126,7 @@ $correo = isset($_POST['correo']) ? $_POST['correo'] : '';
                   <option value="3" <?php if(htmlspecialchars($turno)=='Completo'){echo 'selected';} ?>>Completo</option>
                   <option value="4" <?php if(htmlspecialchars($turno)=='Nocturno'){echo 'selected';} ?>>Nocturno</option>
               </select>
+              <span id="obersavionesError7" style="display: none;">Incorecto</span>
               </div>
             </div>
             <!-- Number input -->
@@ -126,32 +134,35 @@ $correo = isset($_POST['correo']) ? $_POST['correo'] : '';
               <label class="form-label" for="form6Example6">Telefono</label>
               <input type="number" id="form6Example6" name="telefono" class="form-control" placeholder="Ejem. 4451125432"
                 value="<?php echo htmlspecialchars($telefono); ?>" />
+                <span id="obersavionesError8" style="display: none;">Incorecto</span>
             </div>
             <div data-mdb-input-init class="form-outline mb-4">
               <label class="form-label" for="form6Example6">Mail</label>
-              <input type="mail" id="form6Example6" name="correo" class="form-control" placeholder="Ejem. 4451125432"
+              <input type="mail" id="form6Example" name="correo" class="form-control" placeholder="Ejem. 4451125432"
                 value="<?php echo htmlspecialchars($correo); ?>" />
+                <span id="obersavionesError9" style="display: none;">Incorecto</span>
             </div>
             <!-- Submit button -->
             <div class="text-center d-flex flex-row justify-content-center align-item-center">
-              <?php
-                if (htmlspecialchars($idDoctor)) {
-                  echo '<button type="submit" class="btn btn-block mb-4 col-md-3 me-3" style="background-color: #403D38; color:white";>Editar</button>';
-                } else {
-                  echo '<button type="submit" class="btn btn-block mb-4 col-md-3 me-3" style="background-color: #403D38; color:white";>Registrar</button>';
-                }
-              ?>
+            <?php
+                        if (htmlspecialchars($idDoctor)) { ?>
+                            <button id="edit" type="submit" class="btn btn-block mb-4 col-md-3 me-3"
+                                style="background-color: #403D38; color:white;">Actualizar</button>;
+                        <?php } else { ?>
+                            <button id="add" type="submit" class="btn btn-block mb-4 col-md-3 me-3"
+                                style="background-color: #403D38; color:white;">Registrar</button>;
+                        <?php }
+                        ?>
             <button type="button" class="btn btn-danger btn-block mb-4 col-md-3 ms-3" onclick="window.location.href='tablaDoctores.php'">Cancelar</button>
           </div>
           </form>
         </div>
       </div>
     <?php else: ?>
-      <h1 style="text-align: center;">No tienes permitido ingresar a esta ventana, retirate o mandaremos matones. OJO
-      </h1>
+      <script >window.location.href= 'menupagina.php'</script>
     <?php endif; ?>
   </div>
-
+  <script src="jsNuevoDoctor.js"></script>
 </body>
 <footer class="text-center" style=" z-index: 0;">
   <!-- Copyright -->

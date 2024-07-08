@@ -55,8 +55,7 @@
         <?php include "../tablas/tablaC.php"; ?>
       </div>
     <?php else: ?>
-      <h1 style="text-align: center;">No tienes permitido ingresar a esta ventana, retirate o mandaremos matones. OJO
-      </h1>
+      <script >window.location.href= 'menupagina.php'</script>
     <?php endif; ?>
   </div>
 
