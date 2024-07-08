@@ -1,3 +1,4 @@
+<?php  $_SESSION["doctor"] = false;  ?>
 <!DOCTYPE html>
 <html lang="en">
 
