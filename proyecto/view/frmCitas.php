@@ -41,9 +41,14 @@ $medicamentos = isset($_POST['medicamentos']) ? $_POST['medicamentos'] : '';
             <div class="row justify-content-center">
                 <div class="col-md-7">
                     <h2 class="mb-4 text-center">Registro Citas</h2>
-                    <form action="../php/Consulta/nuevaConsulta.php" method="POST">
-                        <input type="hidden" name="idConsulta" value="<?php echo htmlspecialchars($idConsulta); ?>">
-
+                        <?php
+                        if(htmlspecialchars($idConsulta)){
+                            echo '<form action="../php/Consulta/actualizarConsulta.php" method="POST">
+                                <input type="hidden" name="idConsulta" value="'. htmlspecialchars($idConsulta).'">';
+                        }else{
+                            echo '<form action="../php/Consulta/nuevaConsulta.php" method="POST">';
+                        }
+                        ?>  
                         <div class="form-group mb-4">
                             <label for="txtFechaCita">Fecha de cita</label>
                             <input type="date" name="fechaCita" id="txtFechaCita" class="form-control"
@@ -71,9 +76,16 @@ $medicamentos = isset($_POST['medicamentos']) ? $_POST['medicamentos'] : '';
                             <input type="text" name="idDoctor" id="txtIdDoctor" class="form-control" placeholder="Ejem. 1"
                                 value="<?php echo htmlspecialchars($idDoctor); ?>" required>
                         </div>
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary btn-block col-md-7">Registrar</button>
-                        </div>
+                        <div class="text-center d-flex flex-row justify-content-center align-item-center">
+                        <?php
+                            if(htmlspecialchars($idConsulta)){
+                                echo '<button type="submit" class="btn btn-block mb-4 col-md-3 me-3" style="background-color: #403D38; color:white;">Actualizar</button>';
+                            }else{
+                                echo '<button type="submit" class="btn btn-block mb-4 col-md-3 me-3" style="background-color: #403D38; color:white;">Registrar</button>';
+                            }
+                        ?>
+                        <button type="button"  class="btn btn-danger btn-block mb-4 col-md-3 ms-3" onclick="window.location.href='tablaCitas.php'">Cancelar</button>
+                    </div>
                     </form>
                 </div>
             </div>

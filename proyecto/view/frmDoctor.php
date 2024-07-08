@@ -1,5 +1,6 @@
 <?php
 // Recoger los datos enviados por el formulario
+$idDoctor = isset($_POST['idDoctor']) ? $_POST['idDoctor'] : '0';
 $userD = isset($_POST['userD']) ? $_POST['userD'] : '';
 $passD = isset($_POST['passD']) ? $_POST['passD'] : '';
 $nombreD = isset($_POST['nombreD']) ? $_POST['nombreD'] : '';
@@ -43,7 +44,14 @@ $correo = isset($_POST['correo']) ? $_POST['correo'] : '';
       <div class="row">
         <div class="col">
           <h2 class="mb-5 text-center">Registro Doctor</h2>
-          <form action="../php/Doctor/nuevoDoctor.php" method="POST">
+          <?php
+              if($idDoctor!='0'){
+                echo '<form action="../php/Doctor/actualizarDoctor.php" method="POST">';
+                echo '<input type="hidden" id="idDoctor" name="idDoctor" value="'.$idDoctor.'"/>';
+              }else{
+                echo '<form action="../php/Doctor/nuevoDoctor.php" method="POST">';
+              }
+          ?>
             <div class="row mb-4">
               <div class="col">
                 <div data-mdb-input-init class="form-outline">
@@ -82,10 +90,9 @@ $correo = isset($_POST['correo']) ? $_POST['correo'] : '';
                 <select class="form-select" name="sexoD" aria-label="Default select example "
                   value="<?php echo htmlspecialchars($sexoD); ?>">
                   <option selected>Seleccione el sexo</option>
-                  <option value="1">Femenino</option>
-                  <option value="2">Masculino</option>
-                  <option value="3">Otro</option>
-                </select>
+                  <option value="1" <?php if(htmlspecialchars($sexoD)=='F'){echo 'selected';} ?>>Femenino</option>
+                  <option value="2" <?php if(htmlspecialchars($sexoD)=='M'){echo 'selected';} ?>>Masculino</option>
+              </select>
               </div>
               <div class="col">
                 <div class="form-outline">
@@ -107,11 +114,11 @@ $correo = isset($_POST['correo']) ? $_POST['correo'] : '';
                 <select class="form-select" aria-label="Default select example" name="turno"
                   value="<?php echo htmlspecialchars($turno); ?>">
                   <option selected>Seleccione Turno</option>
-                  <option value="1">Matutino</option>
-                  <option value="2">Vespertino</option>
-                  <option value="3">Completo</option>
-                  <option value="4">Nocturno</option>
-                </select>
+                  <option value="1" <?php if(htmlspecialchars($turno)=='Matutino'){echo 'selected';} ?>>Matutino</option>
+                  <option value="2" <?php if(htmlspecialchars($turno)=='Vespertino'){echo 'selected';} ?>>Vespertino</option>
+                  <option value="3" <?php if(htmlspecialchars($turno)=='Completo'){echo 'selected';} ?>>Completo</option>
+                  <option value="4" <?php if(htmlspecialchars($turno)=='Nocturno'){echo 'selected';} ?>>Nocturno</option>
+              </select>
               </div>
             </div>
             <!-- Number input -->
@@ -127,11 +134,15 @@ $correo = isset($_POST['correo']) ? $_POST['correo'] : '';
             </div>
             <!-- Submit button -->
             <div class="text-center d-flex flex-row justify-content-center align-item-center">
-              <button data-mdb-ripple-init type="submit" class="btn btn-block mb-4 col-md-3 me-3"
-                style="background-color: #403D38; color:white;">Registrar</button>
-              <button type="button" class="btn btn-danger btn-block mb-4 col-md-3 ms-3"
-                onclick="window.location.href='tablaDoctores.php'">Cancelar</button>
-            </div>
+              <?php
+                if (htmlspecialchars($idDoctor)) {
+                  echo '<button type="submit" class="btn btn-block mb-4 col-md-3 me-3" style="background-color: #403D38; color:white";>Editar</button>';
+                } else {
+                  echo '<button type="submit" class="btn btn-block mb-4 col-md-3 me-3" style="background-color: #403D38; color:white";>Registrar</button>';
+                }
+              ?>
+            <button type="button" class="btn btn-danger btn-block mb-4 col-md-3 ms-3" onclick="window.location.href='tablaDoctores.php'">Cancelar</button>
+          </div>
           </form>
         </div>
       </div>

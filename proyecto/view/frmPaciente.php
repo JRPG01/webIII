@@ -1,5 +1,6 @@
 <?php
 // Recoger los datos enviados por el formulario
+$idCliente = isset($_POST['idCliente']) ? $_POST['idCliente'] : '0';
 $userC = isset($_POST['userC']) ? $_POST['userC'] : '';
 $passC = isset($_POST['passC']) ? $_POST['passC'] : '';
 $nombreC = isset($_POST['nombreC']) ? $_POST['nombreC'] : '';
@@ -41,7 +42,15 @@ $telefono = isset($_POST['telefono']) ? $_POST['telefono'] : '';
         <div class="text-center">
           <h2 class="mb-4">Registro Paciente</h2>
         </div>
-        <form action="../php/cliente/nuevoCliente.php" method="POST">
+        <?php
+          if($idCliente!='0'){
+            echo '<form action="../php/Cliente/actualizarCliente.php" method="POST">';
+            echo '<input type="hidden" id="idCliente" name="idCliente" value="'.$idCliente.'"/>';
+          }else{
+            echo '<form action="../php/Cliente/nuevoCliente.php" method="POST">';
+          }
+            
+          ?>
           <div class="row mb-4">
             <div class="col">
               <div data-mdb-input-init class="form-outline">
@@ -80,9 +89,8 @@ $telefono = isset($_POST['telefono']) ? $_POST['telefono'] : '';
               <select class="form-select" aria-label="Default select example" name="sexoC"
                 value="<?php echo htmlspecialchars($sexoC); ?>">
                 <option selected>Seleccione el sexo</option>
-                <option value="1">Femenino</option>
-                <option value="2">Masculino</option>
-                <option value="3">Otro</option>
+                <option value="1" <?php if(htmlspecialchars($sexoC)=='F'){echo 'selected';} ?>>Femenino</option>
+                <option value="2" <?php if(htmlspecialchars($sexoC)=='M'){echo 'selected';} ?>>Masculino</option>
               </select>
             </div>
             <div class="col">
@@ -102,11 +110,19 @@ $telefono = isset($_POST['telefono']) ? $_POST['telefono'] : '';
           </div>
           <!-- Submit button -->
           <div class="text-center d-flex flex-row justify-content-center align-item-center">
-            <button data-mdb-ripple-init type="submit" class="btn btn-block mb-4 col-md-3 me-3"
-              style="background-color: #403D38; color:white;">Registrar</button>
-            <button type="button" class="btn btn-danger btn-block mb-4 col-md-3 ms-3"
-              onclick="window.location.href='tablaPacientes.php'">Cancelar</button>
-          </div>
+          <?php
+            if(htmlspecialchars($idCliente)){
+              echo '<button data-mdb-ripple-init type="submit"
+              class="btn btn-block mb-4 col-md-3 me-3" style="background-color: #403D38; color:white;">Actualizar</button>
+              ';
+            }else{
+              echo '<button data-mdb-ripple-init type="submit"
+              class="btn btn-block mb-4 col-md-3 me-3" style="background-color: #403D38; color:white;">Registrar</button>
+              ';
+            }
+          ?>
+           <button type="button"  class="btn btn-danger btn-block mb-4 col-md-3 ms-3" onclick="window.location.href='tablaPacientes.php'">Cancelar</button>
+        </div>
         </form>
       </div>
     </div>
