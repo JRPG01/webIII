@@ -7,7 +7,7 @@ $tipo = isset($_SESSION["doctor"]) ? $_SESSION["doctor"] : false;
 
 <nav class="navbar fixed-top" style="background-color: #736151; padding-left: 30px;">
     <div class="container-fluid">
-        <a class="navbar-brand text-white" href="#">Hospital General</a>
+        <a class="navbar-brand text-white" href="../view/menupagina.php">Hospital General</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
             aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

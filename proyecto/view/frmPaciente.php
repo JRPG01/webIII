@@ -54,50 +54,56 @@ $telefono = isset($_POST['telefono']) ? $_POST['telefono'] : '';
           <div class="row mb-4">
             <div class="col">
               <div data-mdb-input-init class="form-outline">
-                <label class="form-label" for="txtNombre">Usuario</label>
-                <input type="text" name="userC" id="txtNombre" class="form-control" placeholder="Ejem. Josue"
+                <label class="form-label" for="userC">Usuario</label>
+                <input type="text" name="userC" id="userC" class="form-control" placeholder="Ejem. Josue"
                   value="<?php echo htmlspecialchars($userC); ?>" />
+                  <span id="usuarioError" style="display: none;">Incorecto</span>
               </div>
             </div>
             <div class="col">
               <div data-mdb-input-init class="form-outline">
-                <label class="form-label" for="txtApellido">Contraseña</label>
-                <input type="text" name="passC" id="txtApellido" class="form-control" placeholder="Ejem. Morales"
+                <label class="form-label" for="passC">Contraseña</label>
+                <input type="text" name="passC" id="passC" class="form-control" placeholder="Ejem. Morales"
                   value="<?php echo htmlspecialchars($passC); ?>" />
+                  <span id="contrasenaError" style="display: none;">Incorecto</span>
               </div>
             </div>
           </div>
           <div class="row mb-4">
             <div class="col">
               <div data-mdb-input-init class="form-outline">
-                <label class="form-label" for="txtNombre">Nombre</label>
-                <input type="text" name="nombreC" id="txtNombre" class="form-control" placeholder="Ejem. Josue"
+                <label class="form-label" for="nombreC">Nombre</label>
+                <input type="text" name="nombreC" id="nombreC" class="form-control" placeholder="Ejem. Josue"
                   value="<?php echo htmlspecialchars($nombreC); ?>" />
+                  <span id="nombreError" style="display: none;">Incorecto</span>
               </div>
             </div>
             <div class="col">
               <div data-mdb-input-init class="form-outline">
-                <label class="form-label" for="txtApellido">Apellido</label>
-                <input type="text" name="apellidosC" id="txtApellido" class="form-control" placeholder="Ejem. Morales"
+                <label class="form-label" for="apellidosC">Apellido</label>
+                <input type="text" name="apellidosC" id="apellidosC" class="form-control" placeholder="Ejem. Morales"
                   value="<?php echo htmlspecialchars($apellidosC); ?>" />
+                  <span id="apellidoError" style="display: none;">Incorecto</span>
               </div>
             </div>
           </div>
           <div class="row mb-4">
             <div class="col">
               <label class="form-label" for="form6Example2">Sexo</label>
-              <select class="form-select" aria-label="Default select example" name="sexoC"
+              <select class="form-select" aria-label="Default select example" id="sexoC" name="sexoC"
                 value="<?php echo htmlspecialchars($sexoC); ?>">
                 <option selected>Seleccione el sexo</option>
                 <option value="1" <?php if(htmlspecialchars($sexoC)=='F'){echo 'selected';} ?>>Femenino</option>
                 <option value="2" <?php if(htmlspecialchars($sexoC)=='M'){echo 'selected';} ?>>Masculino</option>
               </select>
+              <span id="sexoError" style="display: none;">Incorecto</span>
             </div>
             <div class="col">
               <div class="form-outline">
                 <label class="form-label" for="form6Example2">Edad</label>
-                <input type="number" name="edadC" id="txtedad" class="form-control"
+                <input type="number" name="edadC" id="edadC" class="form-control"
                   value="<?php echo htmlspecialchars($edadC); ?>" />
+                  <span id="edadError" style="display: none;">Incorecto</span>
               </div>
             </div>
           </div>
@@ -105,21 +111,20 @@ $telefono = isset($_POST['telefono']) ? $_POST['telefono'] : '';
           <!-- Number input -->
           <div data-mdb-input-init class="form-outline mb-4">
             <label class="form-label" for="form6Example6">Telefono</label>
-            <input type="number" name="telefono" id="form6Example6" class="form-control" placeholder="Ejem. 4551124365"
+            <input type="number" name="telefono" id="telefono" class="form-control" placeholder="Ejem. 4551124365"
               value="<?php echo htmlspecialchars($telefono); ?>" />
+              <span id="numeroError" style="display: none;">Incorecto</span>
           </div>
           <!-- Submit button -->
           <div class="text-center d-flex flex-row justify-content-center align-item-center">
           <?php
-            if(htmlspecialchars($idCliente)){
-              echo '<button data-mdb-ripple-init type="submit"
-              class="btn btn-block mb-4 col-md-3 me-3" style="background-color: #403D38; color:white;">Actualizar</button>
-              ';
-            }else{
-              echo '<button data-mdb-ripple-init type="submit"
-              class="btn btn-block mb-4 col-md-3 me-3" style="background-color: #403D38; color:white;">Registrar</button>
-              ';
-            }
+            if (htmlspecialchars($idCliente)) { ?>
+                  <button id="add" type="submit" class="btn btn-block mb-4 col-md-3 me-3"
+                    style="background-color: #403D38; color:white; display:Block;">Actualizar</button>
+                  <?php } else { ?>
+                  <button id="add" type="submit" class="btn btn-block mb-4 col-md-3 me-3"
+                    style="background-color: #403D38; color:white; " hidden>Registrar</button>
+                  <?php }
           ?>
            <button type="button"  class="btn btn-danger btn-block mb-4 col-md-3 ms-3" onclick="window.location.href='tablaPacientes.php'">Cancelar</button>
         </div>
@@ -128,7 +133,7 @@ $telefono = isset($_POST['telefono']) ? $_POST['telefono'] : '';
     </div>
   </div>
 </body>
-
+<script src="scriptNuevoCliente.js"></script>
 <footer class="text-center" style=" z-index: 0;">
   <!-- Copyright -->
   <div class="text-center p-3 text-white" style="background-color: #403D38;">
