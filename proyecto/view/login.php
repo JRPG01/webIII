@@ -29,7 +29,7 @@
             <div class="row g-0 h-100">
               <div class="col-md-6 col-lg-5 d-none d-md-block video-container">
                 <!--<img src="https://d2lcsjo4hzzyvz.cloudfront.net/blog/wp-content/uploads/2019/12/Servicio-de-oritencio%CC%81n-me%CC%81dica--413x455.jpg" alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem; height: 40rem;" />-->
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/-gA8Xd64vcs" title="Video de YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/25hS4zFut7k?autoplay=1&controls=0&loop=1&playlist=25hS4zFut7k&mute=1&showinfo=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
               </div>
               <div class="col-md-6 col-lg-7 d-flex align-items-center">
                 <div class="card-body p-4 p-lg-5 text-black">

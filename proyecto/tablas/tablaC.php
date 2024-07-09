@@ -1,7 +1,6 @@
 <?php
-
 include "../connection/connection.php";
-
+$inSession = $_SESSION["nomUser"];
 // Consulta SQL para obtener los datos
 $sql = "SELECT c.idConsulta, c.fechaCita, 
                CONCAT(cl.nombreC, ' ', cl.apellidosC) as nombreCliente, 
@@ -10,7 +9,8 @@ $sql = "SELECT c.idConsulta, c.fechaCita,
                c.idCliente, c.idDoctor
         FROM consultas c
         INNER JOIN clientes cl ON c.idCliente = cl.idCliente
-        INNER JOIN doctor d ON c.idDoctor = d.idDoctor";
+        INNER JOIN doctor d ON c.idDoctor = d.idDoctor
+        WHERE d.userD ='$inSession'";
 
 $query = mysqli_query($conQuery, $sql);
 
