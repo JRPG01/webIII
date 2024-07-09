@@ -21,6 +21,24 @@ section::after {
     z-index: -1;
 }
 
+.video-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* Proporción 16:9 */
+    border-radius: 1rem 0 0 1rem;
+  }
+  
+.video-container iframe {
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 110%;
+    border-radius: 1rem 0 0 1rem;
+  }
+
 .card{
     border-radius: 10px; 
     height: 40rem;

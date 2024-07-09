@@ -16,15 +16,20 @@
   
 </head>
 
+<?php
+  session_start();
+?>
+
 <body class="bg-black">
   <section class="vh-100">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col col-xl-10">
-          <div class="card" style="border-radius: 1rem; height: 40rem; border: 0px">
-            <div class="row g-0">
-              <div class="col-md-6 col-lg-5 d-none d-md-block">
-                <img src="https://d2lcsjo4hzzyvz.cloudfront.net/blog/wp-content/uploads/2019/12/Servicio-de-oritencio%CC%81n-me%CC%81dica--413x455.jpg" alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem; height: 40rem;" />
+          <div class="card" style="border-radius: 1rem; height: 40rem; border: 0px; position: relative;">
+            <div class="row g-0 h-100">
+              <div class="col-md-6 col-lg-5 d-none d-md-block video-container">
+                <!--<img src="https://d2lcsjo4hzzyvz.cloudfront.net/blog/wp-content/uploads/2019/12/Servicio-de-oritencio%CC%81n-me%CC%81dica--413x455.jpg" alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem; height: 40rem;" />-->
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/-gA8Xd64vcs" title="Video de YouTube" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
               <div class="col-md-6 col-lg-7 d-flex align-items-center">
                 <div class="card-body p-4 p-lg-5 text-black">
@@ -50,12 +55,17 @@
                     </div>
 
                     <div class="pt-5 mb-4 d-flex justify-content-center align-items-center">
-                      <button data-mdb-button-init data-mdb-ripple-init class="btn btn-lg btn-block text-white" style="width: 200px; background-color:#403D38" type="submit"> Login </button>
+                      <button data-mdb-button-init data-mdb-ripple-init class="btn btn-lg btn-block text-white" style="width: 200px; background-color:#403D38; border-radius: 10px; box-shadow: 0 0 5px black;" type="submit"> Login </button>
+                    </div>
+
+                    <div class="d-flex justify-content-end align-items-end" style="position:absolute; bottom: 0; right: 0;">
+                      <button class="btn btn-lg btn-block text-white" style="width: 100px; background-color:#403D38; border-radius: 10px; box-shadow: 0 0 5px black;" type="button" onClick="window.location.href='aboutUs.php';">
+                        <img src="../img/sobre-nosotros.png" alt="" style="width:40px;">
+                      </button>
                     </div>
 
 
                     <?php
-                    session_start();
                     $error = isset($_SESSION["login"]) ? $_SESSION["login"] : 0;
                     if ($error == 1) {
                       echo '

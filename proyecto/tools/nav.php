@@ -15,23 +15,29 @@ $tipo = isset($_SESSION["doctor"]) ? $_SESSION["doctor"] : false;
         <div class="offcanvas offcanvas-end border-0 w-auto" tabindex="-1" id="offcanvasNavbar"
             aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header">
-                <h5 class="offcanvas-title text-white" id="offcanvasNavbarLabel">
+                <h2 class="offcanvas-title text-white text-center w-100" id="offcanvasNavbarLabel">
                     <?php echo $_SESSION["nomUser"]; ?>
-                </h5>
+                </h2>
                 <button type="button" class="btn-close ms-4" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body p-0 pt-5">
                 <ul class="navbar-nav justify-content-end flex-grow-1 w-auto">
                     <li class="nav-item w-auto">
-                    <?php if ($_SESSION["doctor"]): ?>
-                            <a class="nav-link text-white" href="#" onclick="showPaciente()">Paciente</a>
+                        <a class="nav-link text-white" href="../view/menupagina.php">Menú principal</a>
+                    </li>
+                
+                    <li class="nav-item w-auto">
+                        <a class="nav-link text-white" href="#" onclick="showPaciente()">Paciente</a>
+                    </li>
+                    
+                    <li class="nav-item w-auto">
+                        <?php if ($_SESSION["doctor"]): ?>
+                            <a class="nav-link text-white" href="#" onclick="showCitas()">Citas</a>
                         <?php else: ?>
-                            <a class="nav-link text-white disabled" href="#" onclick="showPaciente()">Paciente</a>
+                            <a class="nav-link text-white disabled" href="#" onclick="showCitas()">Citas</a>
                         <?php endif; ?>
                     </li>
-                    <li class="nav-item w-auto">
-                        <a class="nav-link text-white" href="#" onclick="showCitas()">Citas</a>
-                    </li>
+                    
                     <li class="nav-item w-auto">
                         <?php if ($_SESSION["doctor"]): ?>
                             <a class="nav-link text-white" href="#" onclick="showDoctores()">Doctores</a>
@@ -39,6 +45,7 @@ $tipo = isset($_SESSION["doctor"]) ? $_SESSION["doctor"] : false;
                             <a class="nav-link text-white disabled" href="#" onclick="showDoctores()">Doctores</a>
                         <?php endif; ?>
                     </li>
+                    
                     <li class="nav-item w-auto">
                         <a class="nav-link text-white" href="#" onclick="showLogin()">Cerrar Sesion</a>
                     </li>

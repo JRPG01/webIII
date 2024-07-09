@@ -7,7 +7,7 @@
 </head>
 <body>
     <?php
-        header("Location: view/login.php");
+        header("Location: view/aboutUs.php");
     ?>
 </body>
 </html>
