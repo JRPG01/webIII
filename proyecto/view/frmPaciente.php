@@ -30,17 +30,48 @@ $telefono = isset($_POST['telefono']) ? $_POST['telefono'] : '';
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
   <link rel="stylesheet" href="../css/estilos.css">
+
+  <style>
+    /* Estilo personalizado para la tabla */
+    body {
+      display: flex;
+      flex-direction: column; 
+      height: 100vh;
+      background-color: black;
+    }
+
+    body::after {
+      content: "";
+      background: url("../img/fondo-form-pacientes.jpg") no-repeat;
+      background-size: cover;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      filter: blur(20px);
+      z-index: -1;
+    }
+    
+    .tabla {
+      padding: 50px 0;
+      margin: 100px 50px 50px 50px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 10px;
+      box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+    }
+  </style>
 </head>
 
 <body>
   <header>
     <?php include "../tools/nav.php"; ?>
   </header>
-  <div class="container mt-5 py-5" style="flex-grow: 1;">
-    <div class="row">
-      <div class="col">
+  <div class="py-5 mt-6 tabla" style="flex-grow: 1;">
+    <div class="row justify-content-center align-item-center">
+      <div class="col-7">
         <div class="text-center">
-          <h2 class="mb-4">Registro Paciente</h2>
+          <h2 class="mb-4 mt-4 p-4 bg-white" style="box-shadow: 0 0 5px black; border-radius: 10px;">Registro Paciente</h2>
         </div>
         <?php
           if($idCliente!='0'){
@@ -134,6 +165,7 @@ $telefono = isset($_POST['telefono']) ? $_POST['telefono'] : '';
   </div>
 </body>
 <script src="scriptNuevoCliente.js"></script>
+
 <footer class="text-center" style=" z-index: 0;">
   <!-- Copyright -->
   <div class="text-center p-3 text-white" style="background-color: #403D38;">

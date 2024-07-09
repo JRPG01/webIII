@@ -28,7 +28,40 @@ $medicamentos = isset($_POST['medicamentos']) ? $_POST['medicamentos'] : '';
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
     <link rel="stylesheet" href="../css/estilos.css">
+    
+    <style>
+    /* Estilo personalizado para la tabla */
+    body {
+      display: flex;
+      flex-direction: column; 
+      height: 100vh;
+      background-color: black;
+    }
+
+    body::after {
+      content: "";
+      background: url("../img/fondo-form-citas.jpg") no-repeat;
+      background-size: cover;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      filter: blur(20px);
+      z-index: -1;
+    }
+    
+    .tabla {
+      padding: 50px 0;
+      margin: 100px 50px 50px 50px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 10px;
+      box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+
 </head>
 
 <body>
@@ -36,11 +69,11 @@ $medicamentos = isset($_POST['medicamentos']) ? $_POST['medicamentos'] : '';
         <?php include "../tools/nav.php"; ?>
     </header>
 
-    <div class="container mt-5">
+    <div class="py-5 mt-6 tabla" style="flex-grow: 1;">
         <?php if ($_SESSION["doctor"]): ?>
-            <div class="row justify-content-center">
-                <div class="col-md-7">
-                    <h2 class="mb-4 text-center">Registro Citas</h2>
+            <div class="row justify-content-center align-item-center">
+                <div class="col-5">
+                    <h2 class="mb-4 mt-4 p-4 bg-white text-center" style="box-shadow: 0 0 5px black; border-radius: 10px;">Registro Citas</h2>
                     <?php
                     if (htmlspecialchars($idConsulta)) {
                         echo '<form action="../php/Consulta/actualizarConsulta.php" method="POST">
@@ -102,13 +135,14 @@ $medicamentos = isset($_POST['medicamentos']) ? $_POST['medicamentos'] : '';
 
     <script src="scriptNuevaConsulta.js"></script>
 </body>
-<footer class="bg-body-tertiary text-center footerCitas">
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-        © 2024 Copyright:
-        <a class="text-body" href="">ITSUR WEB III</a>
-    </div>
-    <!-- Copyright -->
+
+<footer class="text-center" style=" z-index: 0;">
+  <!-- Copyright -->
+  <div class="text-center p-3 text-white" style="background-color: #403D38;">
+    © 2024 Copyright:
+    <a class="text-white" href="">ITSUR WEB III</a>
+  </div>
+  <!-- Copyright -->
 </footer>
 
 </html>
