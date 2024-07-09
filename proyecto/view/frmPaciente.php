@@ -151,7 +151,7 @@ $telefono = isset($_POST['telefono']) ? $_POST['telefono'] : '';
           <?php
             if (htmlspecialchars($idCliente)) { ?>
                   <button id="add" type="submit" class="btn btn-block mb-4 col-md-3 me-3"
-                    style="background-color: #403D38; color:white; display:Block;">Actualizar</button>
+                    style="background-color: #403D38; color:white;">Actualizar</button>
                   <?php } else { ?>
                   <button id="add" type="submit" class="btn btn-block mb-4 col-md-3 me-3"
                     style="background-color: #403D38; color:white; ">Registrar</button>

@@ -1,7 +1,4 @@
 let contO = true;
-let contM = true;
-let contC = true;
-let contD = true;
 
 
 const txtObservaciones = document.getElementById('txtObservaciones');
@@ -14,14 +11,14 @@ txtObservaciones.addEventListener('keyup', function() {
     if (observaciones.length >= 0 && observaciones.length <= 7) {
         errorObservaciones.style.display = 'block';
         errorObservaciones.style.color = 'red';
-        add.style.visibility = 'hidden';
+        add.style.display = 'none';
         contO = false;
     } else {
         contO = true;
         errorObservaciones.style.display = 'none';
         
-        if(contD && contC && contM && contO){
-            add.style.visibility = 'visible';
+        if(contO){
+            add.style.display = 'block';
         }
         
     }
@@ -37,13 +34,13 @@ medicamentos.addEventListener('keyup', function() {
     if (observaciones.length >= 0 && observaciones.length <= 7) {
         errorMedicamentos.style.display = 'block';
         errorMedicamentos.style.color = 'red';
-        add.style.visibility = 'hidden';
-        contM = false;
+        add.style.display = 'none';
+        contO = false;
     } else {
         errorMedicamentos.style.display = 'none';
-        contM = true;
-        if(contD && contC && contM && contO){
-            add.style.visibility = 'visible';
+        contO = true;
+        if(contO){
+            add.style.display = 'block';
         }
     }
 });
@@ -58,13 +55,13 @@ idCliente.addEventListener('keyup', function() {
     if (observaciones.length >= 0 && !regexNumerosC.test(observaciones)) {
         errorCliente.style.display = 'block';
         errorCliente.style.color = 'red';
-        add.style.visibility = 'hidden';
-        contC = false;
+        add.style.display = 'none';
+        contO = false;
     } else {
         errorCliente.style.display = 'none';
-        contC = true;
-        if(contD && contC && contM && contO){
-            add.style.visibility = 'visible';
+        contO = true;
+        if(contO){
+            add.style.display = 'block';
         }
     }
 });
@@ -72,7 +69,6 @@ idCliente.addEventListener('keyup', function() {
 const idDoctor = document.getElementById('txtIdDoctor');
 const errorDoctor = document.getElementById('DoctorError');
 const regexNumerosD = /[1-9][0-9]*/;
-const addD = document.getElementById('add');
 
 idDoctor.addEventListener('keyup', function() {
     const observaciones = this.value.trim();
@@ -80,13 +76,13 @@ idDoctor.addEventListener('keyup', function() {
     if (!regexNumerosD.test(observaciones)) {
         errorDoctor.style.display = 'block';
         errorDoctor.style.color = 'red';
-        add.style.visibility = 'hidden';
-        contD = false;
+        add.style.display = 'none';
+        contO = false;
     } else {
         errorDoctor.style.display = 'none';
-        contD = true;
-        if(contD && contC && contM && contO){
-            add.style.visibility = 'visible';
+        contO = true;
+        if(contO){
+            add.style.display = 'block';
         }
     }
 });

@@ -113,13 +113,13 @@ $medicamentos = isset($_POST['medicamentos']) ? $_POST['medicamentos'] : '';
                             <span id="DoctorError" style="display: none;">Incorecto</span>
                     </div>
                     <div class="text-center d-flex flex-row justify-content-center align-item-center">
-                        <?php
-                        if (htmlspecialchars($idConsulta)) { ?>
+                    <?php
+                        if (htmlspecialchars($idCliente)) { ?>
                             <button id="add" type="submit" class="btn btn-block mb-4 col-md-3 me-3"
-                                style="background-color: #403D38; color:white;">Actualizar</button>;
+                               style="background-color: #403D38; color:white;">Actualizar</button>
                         <?php } else { ?>
                             <button id="add" type="submit" class="btn btn-block mb-4 col-md-3 me-3"
-                                style="background-color: #403D38; color:white;">Registrar</button>;
+                                style="background-color: #403D38; color:white; ">Registrar</button>
                         <?php }
                         ?>
                         <button type="button" class="btn btn-danger btn-block mb-4 col-md-3 ms-3"
