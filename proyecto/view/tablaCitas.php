@@ -21,8 +21,38 @@
   <link rel="stylesheet" href="../css/estilos.css">
   <style>
     /* Estilo personalizado para la tabla */
-    .tabla {
-      margin-top: 75px;
+    body {
+      display: flex;
+      flex-direction: column; 
+      height: 100vh;
+      background-color: black;
+    }
+
+    body::after {
+      content: "";
+      background: url("../img/fondo-citas.jpg") no-repeat;
+      background-size: cover;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      filter: blur(20px);
+      z-index: -1;
+    }
+    
+    .tabla {      
+      height:auto; 
+      justify-content:center; 
+      align-items:center; 
+      display:flex; 
+      flex-wrap:wrap;
+      margin-top: 50px;
+      padding: 50px 0;
+      margin: 100px 50px 50px 50px;
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 10px;
+      box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
     }
 
     .table-light-blue {
@@ -42,16 +72,15 @@
 <header>
     <?php include "../tools/nav.php"; ?>
   </header>
-  <div class="container mt-6 tabla" style="flex-grow: 1;">
+  <div class="mt-6 tabla d-flex flex-column justify-content-start align-items-center" style="flex-grow: 1;">
     <?php if ($_SESSION["doctor"]): ?>
-      <div class="d-flex flex-row justify-content-center align-item-center py-5">
-        <h2 class="text-center px-3">Citas</h2>
-        <button class="btn p-0 d-flex justify-content-center align-item-center"
-          style="width: 50px; background-color: #403D38; color:white;" onclick="addCitas()">
+      <div class="d-flex flex-row justify-content-start align-item-start pb-5">
+        <h2 class="text-center px-3">Datos de las Citas</h2>
+        <button class="btn p-0 d-flex justify-content-center align-item-center" style="width: 50px; background-color: #403D38; color:white;" onclick="addCitas()">
           <h2 class="p-0">+</h2>
         </button>
       </div>
-      <div class="table-responsive">
+      <div class="table-responsive px-5">
         <?php include "../tablas/tablaC.php"; ?>
       </div>
     <?php else: ?>
